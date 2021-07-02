@@ -22,3 +22,18 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+YELP MVP LIST
+
+New account creation, login, and guest/demo login
+Hosting on Heroku
+Business Page
+Search / filters
+Reviews / ratings
+Map
+A production README (NB: check out the sample production README)
+
+
+Bonus: Mark reviews funny, cool, useful etc.
+Bonus: Profile
+Bonus: Friends
