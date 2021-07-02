@@ -15,7 +15,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --mode=development --watch",
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "heroku-prebuild": "npm install -f",
+    "heroku-postbuild": "npm run prod"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +34,7 @@
     "redux": "^4.1.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "serve": "^12.0.0",
     "webpack": "^5.41.1",
     "webpack-cli": "^4.7.2"
   },
