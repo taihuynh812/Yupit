@@ -1,0 +1,86 @@
+.top-half-page{
+    display:flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    height: 570px;
+    background-color: #333;
+    background-color: black;
+    background-size: cover;
+    background-position:bottom;
+    background-image: url(https://lh3.googleusercontent.com/pw/AM-JKLUIZDaXJOExvfmgVYOx-T6ahGmKg6ADekOQgUqxzSm3MbuV9iTtSqz8xI3-e-xvTqjihL6TM3IuR8GUF8owdJPheoX_leiiCMEZXmu3LQ30wGKW2eNMB63tp3999BcoboZNEqK20o271yLFfZuo2667=w861-h575-no?authuser=0)
+}
+
+.header-container{
+    height: 570px;
+    width: 100%;
+    float: right;
+}
+
+.top-half-page .yupit-logo{
+    position: absolute;
+    flex-shrink: 0;
+}
+
+.yupit-logo > img {
+    height: 200px;
+    width: auto;
+
+}
+
+.header-container > .nav-bar{
+    vertical-align: top;
+}
+
+.nav-bar-right > .signin-signout{
+    display: flex;
+    font-size: 18px;
+    float: right;
+    margin-right: 25%;
+    width: 240px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color: transparent;
+	font-weight: 600;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-bar-right a:visited{
+    color: inherit;
+}
+
+.nav-bar-right .signup-button{
+    display: inline-block;
+    border: 2px solid white;
+	padding: 5px;
+	border-radius: 3px;
+}
+
+.nav-bar-right .signin-button{
+    display: inline-block;
+    padding: 5px;
+}
+.nav-bar-right > .loggedin{
+    display: flex;
+    font-size: 18px;
+    float: right;
+    margin-right: 25%;
+    width: 240px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.loggedin{
+    display: flex;
+    justify-content: space-between;
+	font-weight: 400;
+    color: white;
+    width: 100%;
+    padding: 5px;
+	border-radius: 3px;
+    text-decoration: none;
+	text-transform: uppercase;
+}

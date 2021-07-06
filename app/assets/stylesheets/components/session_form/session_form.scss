@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'porkys';
+    src: url(../../base/fonts/Porkys/PORKYS_.TTF);
+}
+
+@font-face {
+    font-family: 'Androgyne-Medium';
+    src: url(../../base/fonts/Androgyne-Medium/Androgyne_TB.otf);
+}   
+
+
+.session-form-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(36, 36, 36);
+    height: 70px;
+}
+
+.header-title{
+    font-size: 36px;
+    color: red;
+    font-family: "porkys";
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.session-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.session-form{
+    height: 300px;
+    width: 400px;
+}
+
+.session-form .terms-and-service{
+    padding: 10px;
+    border-bottom: solid gray 1px;
+
+}
+
+.session-form-action{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: red;
+    font-family: Androgyne-Medium;
+    font-size: 18px;
+}
+
+.session-form-field{
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 18px;
+    padding: 5px 9px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 1.15em;
+}
+
+.session-form-button{
+    color: red;
+    width: 100%;
+}
