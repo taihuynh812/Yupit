@@ -6,7 +6,7 @@ class Review < ApplicationRecord
         class_name: :User,
         foreign_key: :user_id
 
-    belongs_to :business_id,
-        class_name :Business,
+    belongs_to :business,
+        class_name: :Business,
         foreign_key: :business_id
 end
