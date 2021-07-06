@@ -128,6 +128,7 @@ class SessionForm extends React.Component{
                 </header>
                 <div className='session-form-container'>
                     {this.props.formType === 'signup' ? this.signup() : this.login()}
+                    <img src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" />
                 </div>
             </div>
         )
