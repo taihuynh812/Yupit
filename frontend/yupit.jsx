@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Root from './components/root'
 import configureStore from './store/store'
 import { login, logout, signup } from "./actions/session"
+import {fetchBusinesses} from './actions/business'
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -24,6 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.signup = signup
     window.login = login
     window.logout = logout
+    window.dispatch = store.dispatch;
+    window.getState = store.dispatch;
+    window.fetchBusinesses = fetchBusinesses
 
     ReactDOM.render(<Root store={store}/>, root)
 })
