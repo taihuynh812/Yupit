@@ -7,7 +7,17 @@ class SessionForm extends React.Component{
         this.state = this.props.user
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.demouser = {
+            username: 'demouser',
+            password: 'demo123'
+        }
     }
+
+    componentWillUnmount(){
+        this.props.receiveErrors([])
+    }
+
+    
 
     handleSubmit(e){
         e.preventDefault()
@@ -113,6 +123,8 @@ class SessionForm extends React.Component{
                             placeholder="Password"
                         />
                     <button type="submit" className="session-form-button">Sign in</button>
+                    <br/>
+                    <button className="session-form-button" onClick={() => this.props.processForm(this.demouser)}>Demo User</button>
                 </form>
                 <br/>
                 New to Yupit? <Link to='/signup'>Sign Up</Link>
