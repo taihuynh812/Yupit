@@ -2,6 +2,7 @@
 require 'open-uri'
 
 User.destroy_all
+Review.destroy_all
 Business.destroy_all
 BusinessCategory.destroy_all
 
