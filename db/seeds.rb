@@ -59,6 +59,12 @@ business1r2 = Review.create!(rating: 4,
                         business_id: business1.id                       
 )
 
+business1r3 = Review.create!(rating: 4,
+                        description: "Would come back again!",
+                        user_id: u3.id,
+                        business_id: business1.id                       
+)
+
 pic1_1 = open('https://yupit-dev.s3.us-east-1.amazonaws.com/Businesses/1.jpeg')
 pic1_2 = open('https://yupit-dev.s3.us-east-1.amazonaws.com/Businesses/2.jpeg')
 pic1_3 = open('https://yupit-dev.s3.us-east-1.amazonaws.com/Businesses/3.jpeg')
@@ -66,7 +72,7 @@ pic1_4 = open('https://yupit-dev.s3.us-east-1.amazonaws.com/Businesses/4.jpeg')
 business1r1.pictures.attach(io: pic1_1, filename: 'peaches_hothouse_1.jpeg')
 business1r1.pictures.attach(io: pic1_2, filename: 'peaches_hothouse_2.jpeg')
 business1r2.pictures.attach(io: pic1_3, filename: 'peaches_hothouse_3.jpeg')
-business1r2.pictures.attach(io: pic1_4, filename: 'peaches_hothouse_4.jpeg')
+business1r3.pictures.attach(io: pic1_4, filename: 'peaches_hothouse_4.jpeg')
 
 business2 = Business.create!(name: 'Barn Joo 35',
                         address: '34 W 35th St',
@@ -85,6 +91,34 @@ business2r1 = Review.create!(rating: 5,
                         business_id: business2.id                       
 )
 
+business2r2 = Review.create!(rating: 4,
+                        description: "Great bibimbap. Comes sizzling in a stone bowl. I requested it spicy and the chefs make it perfectly spicy! Service did feel a little rushed but the food was delicious!",
+                        user_id: u1.id,
+                        business_id: business2.id                       
+)
+
+business2r3 = Review.create!(rating: 5,
+                        description: "I feel like Korean restaurants usually have very predictable menus but I was pleasantly surprised by my dinner here. My friend and I were able to get seated as a walk-in Saturday evening and the tables were spaced enough that we felt comfortable dining indoors. We ordered perhaps too much food for just two people, but everything was so delicious we still left no crumbs.",
+                        user_id: demo.id,
+                        business_id: business2.id                       
+)
+
+business2r4 = Review.create!(rating: 1,
+                        description: "Extremely rude lady Esther, went to ask her a question & she screamed at me because I was near the bar. \"Wait in the front\" I get it's covid but there's a way to speak to people. Shame I didn't get to try the food lost my appetite after being reprimanded by the so called manager.",
+                        user_id: u2.id,
+                        business_id: business2.id                       
+)
+
+barn_1 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Barn+Joo+35/1.jpeg')
+barn_2 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Barn+Joo+35/2.jpeg')
+barn_3 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Barn+Joo+35/3.jpeg')
+barn_4 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Barn+Joo+35/4.jpeg')
+business2r1.pictures.attach(io: barn_1, filename: 'bern_joo_1.jpeg')
+business2r2.pictures.attach(io: barn_2, filename: 'bern_joo_2.jpeg')
+business2r3.pictures.attach(io: barn_3, filename: 'bern_joo_3.jpeg')
+business2r4.pictures.attach(io: barn_4, filename: 'bern_joo_4.jpeg')
+
+
 business3 = Business.create!(name: 'Her Name Is Han',
                         address: '17 E 31st St',
                         city: 'New York',
@@ -101,6 +135,27 @@ business3r1 = Review.create!(rating: 4,
                         user_id: u2.id,
                         business_id: business3.id                       
 )
+
+business3r2 = Review.create!(rating: 5,
+                        description: "My husband and I had an amazing lunch here today. Everything from appetizers to entrees to desserts was delicious and beautifully presented. We loved the unique flavor combinations. Service was prompt and friendly. We will definitely be back!",
+                        user_id: u1.id,
+                        business_id: business3.id                       
+)
+
+business3r3 = Review.create!(rating: 5,
+                        description: "The most incredible Korean food. I still dream about the dinner I had there. Come to Boston!",
+                        user_id: demo.id,
+                        business_id: business3.id                       
+)
+
+han_1 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Her+Name+Is+Han/1.jpeg')
+han_2 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Her+Name+Is+Han/2.jpeg')
+han_3 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Her+Name+Is+Han/3.jpeg')
+han_4 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Her+Name+Is+Han/4.jpeg')
+business2r1.pictures.attach(io: han_1, filename: 'han_1.jpeg')
+business2r3.pictures.attach(io: han_2, filename: 'han_2.jpeg')
+business2r3.pictures.attach(io: han_3, filename: 'han_3.jpeg')
+business2r3.pictures.attach(io: han_4, filename: 'han_4.jpeg')
 
 
 cat1 = Category.create!(category: 'Korean')
