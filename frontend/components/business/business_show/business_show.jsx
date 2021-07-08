@@ -32,9 +32,9 @@ class BusinessShow extends React.Component{
                     <div className='business-nav-bar-container'><NavBar/></div>
                     <div className='business-show-header-container'>
                         <div className="business-images-container">
-                            {/* {this.props.business.photoUrls.map((photoUrl, i) => (
+                            {this.props.business.photoUrls.map((photoUrl, i) => (
                                 <img key={i} className="business-images" src={photoUrl} />
-                            ))} */}
+                            ))}
                             <div className='business-info-container'>
                                 <h1 className='business-name'>{name}</h1>
                                 {this.props.business.categories.map((category, i) => (
