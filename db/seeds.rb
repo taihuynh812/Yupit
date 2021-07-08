@@ -44,14 +44,7 @@ business1 = Business.create!(name: 'Peaches HotHouse',
                         website: 'peacheshothouse.com'
 )
 
-pic1_1 = open('https://yupit-dev.s3.us-east-1.amazonaws.com/Businesses/1.jpeg')
-pic1_2 = open('https://yupit-dev.s3.us-east-1.amazonaws.com/Businesses/2.jpeg')
-pic1_3 = open('https://yupit-dev.s3.us-east-1.amazonaws.com/Businesses/3.jpeg')
-pic1_4 = open('https://yupit-dev.s3.us-east-1.amazonaws.com/Businesses/4.jpeg')
-business1.photos.attach(io: pic1_1, filename: 'peaches_hothouse_1.jpeg')
-business1.photos.attach(io: pic1_2, filename: 'peaches_hothouse_2.jpeg')
-business1.photos.attach(io: pic1_3, filename: 'peaches_hothouse_3.jpeg')
-business1.photos.attach(io: pic1_4, filename: 'peaches_hothouse_4.jpeg')
+
 
 business1r1 = Review.create!(rating: 5,
                         description: "Peaches was great! 10/10",
@@ -64,6 +57,15 @@ business1r2 = Review.create!(rating: 4,
                         user_id: u2.id,
                         business_id: business1.id                       
 )
+
+# pic1_1 = open('https://yupit-dev.s3.us-east-1.amazonaws.com/Businesses/1.jpeg')
+# pic1_2 = open('https://yupit-dev.s3.us-east-1.amazonaws.com/Businesses/2.jpeg')
+# pic1_3 = open('https://yupit-dev.s3.us-east-1.amazonaws.com/Businesses/3.jpeg')
+# pic1_4 = open('https://yupit-dev.s3.us-east-1.amazonaws.com/Businesses/4.jpeg')
+# business1.photos.attach(io: pic1_1, filename: 'peaches_hothouse_1.jpeg')
+# business1.photos.attach(io: pic1_2, filename: 'peaches_hothouse_2.jpeg')
+# business1.photos.attach(io: pic1_3, filename: 'peaches_hothouse_3.jpeg')
+# business1.photos.attach(io: pic1_4, filename: 'peaches_hothouse_4.jpeg')
 
 business2 = Business.create!(name: 'Barn Joo 35',
                         address: '34 W 35th St',
