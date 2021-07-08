@@ -90,7 +90,7 @@ class SessionForm extends React.Component{
                             onChange={this.update('zipcode')}  
                             placeholder="Zipcode"
                         />
-                    <button type="submit" className="session-form-button">Sign Up!</button>
+                    <button type="submit" className="session-form-button">Sign Up</button>
                 </form>
                 <br/>
                 Already a member? <Link to='/login'>Sign in</Link>
@@ -123,10 +123,10 @@ class SessionForm extends React.Component{
                         />
                     <button type="submit" className="session-form-button">Sign in</button>
                     <br/>
-                    <button className="session-form-button" onClick={() => this.props.processForm(this.demouser)}>Demo User</button>
+                    <button className="session-form-demo-button" onClick={() => this.props.processForm(this.demouser)}>Demo User</button>
                 </form>
                 <br/>
-                New to Yupit? <Link to='/signup'>Sign Up</Link>
+                <div className="change-form">New to Yupit? <Link to='/signup'>Sign Up</Link></div> 
             </div>
         )
     }

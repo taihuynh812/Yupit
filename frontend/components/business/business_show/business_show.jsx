@@ -17,7 +17,7 @@ class BusinessShow extends React.Component{
             const {name, rating, address, city, state, zipcode, phone, website} = this.props.business
             return(
                 <div>
-                    <div className='header-container'>
+                    <div className='business-show-header-container'>
                         <div className="business-images-container">
                             {this.props.business.photoUrls.map((photoUrl, i) => (
                                 <img key={i} className="business-images" src={photoUrl} />
