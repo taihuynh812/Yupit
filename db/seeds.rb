@@ -59,6 +59,12 @@ business1r1 = Review.create!(rating: 5,
                         business_id: business1.id                       
 )
 
+business1r2 = Review.create!(rating: 4,
+                        description: "Peaches was good! 8/10",
+                        user_id: u2.id,
+                        business_id: business1.id                       
+)
+
 business2 = Business.create!(name: 'Barn Joo 35',
                         address: '34 W 35th St',
                         city: 'New York',

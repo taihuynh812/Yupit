@@ -1,0 +1,49 @@
+.business-nav-bar-container{
+    height: 80px;
+    border: yellow 2px solid;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.nav-bar-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.nav-bar-yupit-logo{
+    height: 60px;
+    width: auto;
+}
+
+.nav-bar-session{
+    display: flex;
+    font-size: 16px;
+    background-color: transparent;
+	font-weight: 600;    
+    text-transform: uppercase;
+}
+
+.nav-bar-session a{
+    text-decoration: none;
+}
+
+.nav-bar-session a:visited{
+    color: inherit;
+}
+
+.navbar-notloggedin{
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+}
+
+.navbar-signin-button{
+    display: inline-block;
+}
+
+.navbar-signup-button{
+    display: inline-block;
+}

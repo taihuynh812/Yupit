@@ -53,7 +53,7 @@
     color: inherit;
 }
 
-.nav-bar-right .signup-button a{
+.signup-button a{
     display: inline-block;
     border: 2px solid white;
 	padding: 10px;
@@ -67,7 +67,7 @@
     border-radius: 3px;
 }
 
-.nav-bar-right .signin-button a{
+.signin-button a{
     display: inline-block;
     padding: 10px;  
     text-decoration: none;
@@ -77,15 +77,6 @@
     border-bottom: 2px white solid;
 }
 
-.nav-bar-right > .loggedin{
-    display: flex;
-    font-size: 18px;
-    float: right;
-    margin-right: 25%;
-    width: 240px;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
 
 .loggedin{
     display: flex;

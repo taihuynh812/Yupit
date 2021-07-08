@@ -1,22 +1,35 @@
 import React from 'react';
+import NavBar from '../../nav_bar/nav_bar';
 
 
 class BusinessShow extends React.Component{
 
+    
     componentDidMount(){
         this.props.fetchBusiness(this.props.match.params.businessId)
     }
 
+    avgRating(){
+        let sum = 0;
+        this.props.business.reviews.forEach(review => {
+            sum += review.rating
+        })
+        return (sum/this.props.business.reviews.length).toFixed(1)
+    }
+
+
     render(){
-        if (!this.props.business){
+        if (!this.props.business || !this.props.business.photoUrls){
+            console.log('loading.........')
             return (
-                <div></div>
+                <div>Loading...</div>
             )
         } else {
-            console.log(this.props.business)
-            const {name, rating, address, city, state, zipcode, phone, website} = this.props.business
+            const rating = this.avgRating()
+            const {name, address, city, state, zipcode, phone, website} = this.props.business
             return(
                 <div>
+                    <div className='business-nav-bar-container'><NavBar/></div>
                     <div className='business-show-header-container'>
                         <div className="business-images-container">
                             {this.props.business.photoUrls.map((photoUrl, i) => (
@@ -24,17 +37,22 @@ class BusinessShow extends React.Component{
                             ))}
                             <div className='business-info-container'>
                                 <h1 className='business-name'>{name}</h1>
-                                <div>{rating}</div>
-                                <div>{address} {city}, {state} {zipcode}</div>
-                                <div>{phone}</div>
-                                <div>{website}</div>
                                 {this.props.business.categories.map((category, i) => (
-                                    <div className='business-categories'>{category.category}</div>
+                                    <div className='business-categories' key={i}>{category.category}</div>
                                 ))}
+                                <div>{rating} -- {this.props.business.reviews.length} reviews</div>
                             </div>
                         </div>  
                     </div>
-                    
+                    <div className='business-show-body-container'>
+                        <div className ='business-location-container'>
+                            <div>{address} {city}, {state} {zipcode}</div>
+                        </div>
+                        <div className='business-info-container'> 
+                            <div>{phone}</div>
+                            <div>{website}</div>
+                        </div>
+                    </div>
                     
                 </div>
             )
