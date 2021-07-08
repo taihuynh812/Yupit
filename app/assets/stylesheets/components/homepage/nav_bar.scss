@@ -35,9 +35,9 @@
 
 .nav-bar-right{
     display: flex;
-    font-size: 18px;
+    font-size: 16px;
     float: right;
-    margin-right: 15%;
+    margin-right: 20%;
     width: 300px;
     flex-wrap: nowrap;
     justify-content: space-evenly;
@@ -56,7 +56,7 @@
 .nav-bar-right .signup-button a{
     display: inline-block;
     border: 2px solid white;
-	padding: 5px;
+	padding: 10px;
 	border-radius: 3px;
     text-decoration: none;
 }
@@ -69,7 +69,7 @@
 
 .nav-bar-right .signin-button a{
     display: inline-block;
-    padding: 5px;
+    padding: 10px;  
     text-decoration: none;
 }
 
