@@ -1,0 +1,45 @@
+.header-container{
+    border: 2px black solid;
+    position: relative;
+}
+.business-images-container{
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    box-sizing: border-box;
+    align-items: flex-start;
+    left: 0;
+    right: 0;
+    padding-left:  64px;
+    padding-right: 64px;
+    padding-top: 40px;
+    margin: auto;
+    border: 2px blue solid;
+
+}
+
+.business-images{
+    height: 350px;
+    width: 570px;
+    object-fit: cover;
+    vertical-align: middle;
+    border: 2px red solid;
+
+}
+
+.business-info-container{
+    position: absolute;
+    z-index: 1;
+    align-self: flex-end;
+    margin-left: 15%;
+}
+
+.business-name{
+    font-size: 50px;
+    color: white;
+}
+
+.business-categories{
+    display: inline;
+    padding-right: 10px;
+}

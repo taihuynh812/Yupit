@@ -19,6 +19,8 @@ export const fetchBusinesses = () => (dispatch) => (
 )
 
 export const fetchBusiness = (businessId) => (dispatch) => (
-    BusinessAPIUtil.fetchBusinesses(businessId)
-        .then(payload => dispatch(receiveBusinesses(payload)))
+    BusinessAPIUtil.fetchBusiness(businessId)
+        .then(payload => {
+            dispatch(receiveBusiness(payload))
+        })
 )

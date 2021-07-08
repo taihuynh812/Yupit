@@ -17,11 +17,25 @@ class BusinessShow extends React.Component{
             const {name, rating, address, city, state, zipcode, phone, website} = this.props.business
             return(
                 <div>
-                    <h1>{name}</h1>
-                    <div>{rating}</div>
-                    <div>{address} {city}, {state} {zipcode}</div>
-                    <div>{phone}</div>
-                    <div>{website}</div>
+                    <div className='header-container'>
+                        <div className="business-images-container">
+                            {this.props.business.photoUrls.map((photoUrl, i) => (
+                                <img key={i} className="business-images" src={photoUrl} />
+                            ))}
+                            <div className='business-info-container'>
+                                <h1 className='business-name'>{name}</h1>
+                                <div>{rating}</div>
+                                <div>{address} {city}, {state} {zipcode}</div>
+                                <div>{phone}</div>
+                                <div>{website}</div>
+                                {this.props.business.categories.map((category, i) => (
+                                    <div className='business-categories'>{category.category}</div>
+                                ))}
+                            </div>
+                        </div>  
+                    </div>
+                    
+                    
                 </div>
             )
         }

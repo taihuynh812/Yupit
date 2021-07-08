@@ -1,10 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+require 'open-uri'
 
 User.destroy_all
 Business.destroy_all
@@ -48,6 +43,15 @@ business1 = Business.create!(name: 'Peaches HotHouse',
                         long: -73.94371176551697,
                         website: 'peacheshothouse.com'
 )
+
+pic1_1 = open('https://yupit-dev.s3.us-east-1.amazonaws.com/Businesses/1.jpeg')
+pic1_2 = open('https://yupit-dev.s3.us-east-1.amazonaws.com/Businesses/2.jpeg')
+pic1_3 = open('https://yupit-dev.s3.us-east-1.amazonaws.com/Businesses/3.jpeg')
+pic1_4 = open('https://yupit-dev.s3.us-east-1.amazonaws.com/Businesses/4.jpeg')
+business1.photos.attach(io: pic1_1, filename: 'peaches_hothouse_1.jpeg')
+business1.photos.attach(io: pic1_2, filename: 'peaches_hothouse_2.jpeg')
+business1.photos.attach(io: pic1_3, filename: 'peaches_hothouse_3.jpeg')
+business1.photos.attach(io: pic1_4, filename: 'peaches_hothouse_4.jpeg')
 
 business1r1 = Review.create!(rating: 5,
                         description: "Peaches was great! 10/10",
