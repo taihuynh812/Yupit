@@ -5,7 +5,8 @@ import configureStore from './store/store'
 import { login, logout, signup } from "./actions/session"
 import {fetchBusinesses} from './actions/business'
 import {fetchUsers} from './actions/user'
-import {fetchReviews} from './actions/review'
+import {fetchReviews, createReview} from './actions/review'
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchBusinesses = fetchBusinesses
     window.fetchUsers = fetchUsers
     window.fetchReviews = fetchReviews
+    window.createReview = createReview
 
     ReactDOM.render(<Root store={store}/>, root)
 })
