@@ -28,7 +28,7 @@ class BusinessShow extends React.Component{
             )
         } else {
             const rating = this.avgRating()
-            const {name, address, city, state, zipcode, phone, website} = this.props.business
+            const {name, address, city, state, zipcode, phone, website, mon_fri, sat_sun} = this.props.business
             return(
                 <div>
                     <div className='business-nav-bar-container'><NavBar/></div>
@@ -47,13 +47,26 @@ class BusinessShow extends React.Component{
                         </div>  
                     </div>
                     <div className='business-show-body-container'>
+
+                        <div className="business-schedule-container">
+                            <div className="schedule-day">Monday: <div className='schedule-time'>{mon_fri}</div></div>
+                            <div className="schedule-day">Tuesday: <div className='schedule-time'>{mon_fri}</div></div>
+                            <div className="schedule-day">Wednesday: <div className='schedule-time'>{mon_fri}</div></div>
+                            <div className="schedule-day">Thursday: <div className='schedule-time'>{mon_fri}</div></div>
+                            <div className="schedule-day">Friday: <div className='schedule-time'>{mon_fri}</div></div>
+                            <div className="schedule-day">Saturday: <div className='schedule-time'>{sat_sun}</div></div>
+                            <div className="schedule-day">Sunday: <div className='schedule-time'>{sat_sun}</div></div>            
+                        </div>
+
                         <div className ='business-location-container'>
                             <div>{address} {city}, {state} {zipcode}</div>
                         </div>
+
                         <div className='business-info-container'> 
                             <div>{phone}</div>
                             <div>{website}</div>
                         </div>
+
                         <div><ReviewIndexContainer users={this.users.users} business={this.props.business}/></div>
                     </div>
                     
