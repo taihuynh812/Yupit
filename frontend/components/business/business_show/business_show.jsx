@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../../nav_bar/nav_bar';
-import ReviewIndexContainer from '../../review/review_index_container';
+import ReviewIndexContainer from '../../review/review_index/review_index_container';
+import ReviewSubmitContainer from '../../review/review_new/review_submit_container';
 
 class BusinessShow extends React.Component{
     constructor(props){
@@ -67,6 +68,7 @@ class BusinessShow extends React.Component{
                             <div>{website}</div>
                         </div>
 
+                        <div><ReviewSubmitContainer currentUser={this.props.currentUser}/></div>
                         <div><ReviewIndexContainer users={this.users.users} business={this.props.business}/></div>
                     </div>
                     
