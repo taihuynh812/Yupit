@@ -3,12 +3,13 @@ import NavBar from '../../nav_bar/nav_bar';
 import ReviewIndexContainer from '../../review/review_index_container';
 
 class BusinessShow extends React.Component{
-
+    constructor(props){
+        super(props) 
+    }
     
     componentDidMount(){
         this.props.fetchBusiness(this.props.match.params.businessId)
-        this.props.fetchReviews(this.props.match.params.businessId)
-        this.props.fetchUsers()
+        this.props.fetchUsers().then(payload => (this.users = payload))
     }
 
     avgRating(){
@@ -21,8 +22,7 @@ class BusinessShow extends React.Component{
 
 
     render(){
-        if (!this.props.business || !this.props.business.photoUrls){
-            console.log('loading.........')
+        if (!this.props.business || !this.props.business.photoUrls || !this.users){
             return (
                 <div>Loading...</div>
             )
@@ -54,7 +54,7 @@ class BusinessShow extends React.Component{
                             <div>{phone}</div>
                             <div>{website}</div>
                         </div>
-                        <div><ReviewIndexContainer fetchUsers={this.props.fetchUsers} business={this.props.business}/></div>
+                        <div><ReviewIndexContainer users={this.users.users} business={this.props.business}/></div>
                     </div>
                     
                 </div>

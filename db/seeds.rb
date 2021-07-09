@@ -47,7 +47,9 @@ business1 = Business.create!(name: 'Peaches HotHouse',
                         phone: '718-563-5822',
                         lat: 40.68336103873503, 
                         long: -73.94371176551697,
-                        website: 'peacheshothouse.com'
+                        website: 'peacheshothouse.com',
+                        mon_fri: "10AM - 10PM",
+                        sat_sun: "10AM - 1AM"
 )
 
 
@@ -87,7 +89,9 @@ business2 = Business.create!(name: 'Barn Joo 35',
                         phone: '212-564-4430',
                         lat: 40.74999331244202,
                         long: -73.98576428465678,
-                        website: 'barnjoo.com'
+                        website: 'barnjoo.com',
+                        mon_fri: "11AM - 11PM",
+                        sat_sun: "11AM - 3AM",
 )
 
 business2r1 = Review.create!(rating: 5,
@@ -132,7 +136,10 @@ business3 = Business.create!(name: 'Her Name Is Han',
                         phone: '718-563-5822',
                         lat: 40.746395887645136,
                         long: -73.98468649977998,
-                        website: 'peacheshothouse.com'
+                        website: 'hernameishan.com',
+                        mon_fri: "10AM - 11PM",
+                        sat_sun: "11AM - 12AM",
+                        
 )
 
 business3r1 = Review.create!(rating: 4,
@@ -171,7 +178,9 @@ business4 = Business.create!(name: 'The Cabin NYC',
                         phone: '212-777-0454',
                         lat: 40.72458465097402, 
                         long: -73.98389413068803,
-                        website: 'thecabinnyc.com'
+                        website: 'thecabinnyc.com',
+                        mon_fri: "12PM - 12AM",
+                        sat_sun: "11AM - 2AM",
 )
 
 business4r1 = Review.create!(rating: 5,

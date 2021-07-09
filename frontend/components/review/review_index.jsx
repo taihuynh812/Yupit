@@ -4,23 +4,32 @@ import React from 'react'
 class ReviewIndex extends React.Component{
     constructor(props){
         super(props)
-        this.state = this.props.users
+    }
+
+    componentDidMount(){
+        this.props.fetchReviews(this.props.business.id)
     }
 
     render(){
-        if (this.props.users.length < 1){
+        if (this.props.reviews.length < 1){
             return (
                 <div>Loading....</div>
             )
         } else {
+            const {reviews} = this.props
             return(
                 <div className="review-index-wrapper">
                     <div className='review-index-container'>
-                        {this.props.reviews.map((review, i) => (
-                            <div className="review-container" key={i}>
-                                <div className="reviewer-name">{this.state[review.user_id].username}</div>
-                            </div>
-                        ))}
+                        <h1>Reviews</h1>
+                        {reviews.map((review, i) => {
+                            return (
+                            <div className='review-details' key={i}>
+                                <div>{review.user.username}</div>
+                                <div>{review.created_at}</div>
+                                <div>{review.rating}</div>
+                                <div>{review.description}</div>
+                            </div>    
+                            )})}
                     </div>
                 </div>
             )
