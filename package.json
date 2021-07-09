@@ -30,6 +30,7 @@
     "@fortawesome/fontawesome-free-regular": "^5.0.13",
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "babel-loader": "^8.2.2",
@@ -51,5 +52,8 @@
   "bugs": {
     "url": "https://github.com/taihuynh812/FoodiePie/issues"
   },
-  "homepage": "https://github.com/taihuynh812/FoodiePie#readme"
+  "homepage": "https://github.com/taihuynh812/FoodiePie#readme",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3"
+  }
 }

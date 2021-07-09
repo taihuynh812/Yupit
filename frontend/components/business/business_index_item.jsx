@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons'
+import * as RegFontAwesome from '@fortawesome/free-regular-svg-icons'
 
 class BusinessIndexItem extends React.Component{
 
@@ -15,6 +18,30 @@ class BusinessIndexItem extends React.Component{
         return (sum/this.props.business.reviews.length).toFixed(1)
     }
 
+    star(rate) {
+        let stars = [];
+        let rating = Math.round(rate);
+        var increment = 0;
+        var max = 5; 
+
+        while(increment < rating) {
+            if ((rating - increment) > 1 ){
+                stars.push(<FontAwesomeIcon className="one-star-rating" icon={faStar} color='red' key={rating-increment}/>);
+                increment++;
+            } else {
+                if ((rating - increment) > 0.1 ){
+                    stars.push(<FontAwesomeIcon className="half-star-rating" icon={faStarHalfAlt} color='red' key={rating-increment}/>);
+                    increment++;
+                }          
+            } 
+        }
+        while(max > rating) {
+            stars.push(<FontAwesomeIcon className='max-rating' icon={RegFontAwesome.faStar} color='red' key={max}/>);
+            max--;
+        }
+        return stars;
+    };
+
     render(){
         const rating = this.avgRating()
         return(
@@ -27,7 +54,7 @@ class BusinessIndexItem extends React.Component{
                             {this.props.business.categories.map((category, i) => (
                                 <div className='business-categories' key={i}>{category.category}</div>
                             ))}
-                            <div>{rating} -- {this.props.business.reviews.length} reviews</div>
+                            <div className='bus-index-rating-container'>{this.star(rating)} - {this.props.business.reviews.length} reviews</div>
                         </div>
                     </Link>
                 </div>

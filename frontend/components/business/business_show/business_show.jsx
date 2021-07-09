@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../../nav_bar/nav_bar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons'
+import * as RegFontAwesome from '@fortawesome/free-regular-svg-icons'
 import ReviewIndexContainer from '../../review/review_index/review_index_container';
 
 class BusinessShow extends React.Component{
@@ -21,8 +24,32 @@ class BusinessShow extends React.Component{
         return (sum/this.props.business.reviews.length).toFixed(1)
     }
 
+    star(rate) {
+        let stars = [];
+        let rating = Math.round(rate);
+        var increment = 0;
+        var max = 5; 
+
+        while(increment < rating) {
+            if ((rating - increment) > 1 ){
+                stars.push(<FontAwesomeIcon className="one-star-rating" icon={faStar} color='red' />);
+                increment++;
+            } else {
+                if ((rating - increment) > 0.1 ){
+                    stars.push(<FontAwesomeIcon className="half-star-rating" icon={faStarHalfAlt} color='red' />);
+                    increment++;
+                }          
+            } 
+        }
+        while(max > rating) {
+            stars.push(<FontAwesomeIcon className='max-rating' icon={RegFontAwesome.faStar} color='red'/>);
+            max--;
+        }
+        return stars;
+    };
 
     render(){
+        debugger
         if (!this.props.business || !this.props.business.photoUrls || !this.users){
             return (
                 <div>Loading...</div>
@@ -43,7 +70,7 @@ class BusinessShow extends React.Component{
                                 {this.props.business.categories.map((category, i) => (
                                     <div className='business-categories' key={i}>{category.category}</div>
                                 ))}
-                                <div>{rating} -- {this.props.business.reviews.length} reviews</div>
+                                <div>{this.star(rating)} -- {this.props.business.reviews.length} reviews</div>
                             </div>
                         </div>  
                     </div>
