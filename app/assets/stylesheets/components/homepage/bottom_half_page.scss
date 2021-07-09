@@ -1,0 +1,20 @@
+.business-index-list-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    border: 5px solid yellow
+}
+
+.business-index-item{
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 7px;
+}
+
+
+.business-index-picture {
+    height: 180px;
+    width: 300px;
+}

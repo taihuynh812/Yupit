@@ -11,14 +11,16 @@ class BusinessIndex extends React.Component{
     render(){
         return(
             <div>
-                <ul>
+                <div className='business-index-list-container'>
                     {this.props.businesses.map((business, i) => (
-                        <BusinessIndexItem
-                            key={i}
-                            business={business}
-                        />
+                        <div className='business-index-item'>
+                            <BusinessIndexItem
+                                key={i}
+                                business={business}
+                            />
+                        </div>
                     ))}
-                </ul>
+                </div>
             </div>
         )
     }

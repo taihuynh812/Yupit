@@ -2,9 +2,14 @@
 require 'open-uri'
 
 User.destroy_all
+User.reset_pk_sequence
 Review.destroy_all
+Review.reset_pk_sequence
 Business.destroy_all
+Business.reset_pk_sequence
 BusinessCategory.destroy_all
+BusinessCategory.reset_pk_sequence
+
 
 demo = User.create!(firstname: "Demo",
                     lastname: "User",
@@ -152,15 +157,56 @@ han_1 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Her+Name+Is+Han/1.jp
 han_2 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Her+Name+Is+Han/2.jpeg')
 han_3 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Her+Name+Is+Han/3.jpeg')
 han_4 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Her+Name+Is+Han/4.jpeg')
-business2r1.pictures.attach(io: han_1, filename: 'han_1.jpeg')
-business2r3.pictures.attach(io: han_2, filename: 'han_2.jpeg')
-business2r3.pictures.attach(io: han_3, filename: 'han_3.jpeg')
-business2r3.pictures.attach(io: han_4, filename: 'han_4.jpeg')
+business3r1.pictures.attach(io: han_1, filename: 'han_1.jpeg')
+business3r3.pictures.attach(io: han_2, filename: 'han_2.jpeg')
+business3r3.pictures.attach(io: han_3, filename: 'han_3.jpeg')
+business3r3.pictures.attach(io: han_4, filename: 'han_4.jpeg')
 
+
+business4 = Business.create!(name: 'The Cabin NYC',
+                        address: '205 E 4th St',
+                        city: 'New York',
+                        state: 'NY',
+                        zipcode: '10009',
+                        phone: '212-777-0454',
+                        lat: 40.72458465097402, 
+                        long: -73.98389413068803,
+                        website: 'thecabinnyc.com'
+)
+
+business4r1 = Review.create!(rating: 5,
+                        description: "The Cabin is such a fun & tasty experience in Alphabet City. It's a great spot if you're looking for some cocktails with friends. Their food is also delicious -I tried their lobster roll and chilean sea bass and seriously couldn't get enough. They were soooo good. I can't wait to go back to try their s'mores!!!!! 
+                        Since it's called The Cabin, you can count on them for a cool aesthetic and vibes. There are bears and flowers everywhere, plus they have a backyard seating area and even a picturesque indoor swing. The staff were really friendly too. They were great at explaining all the dishes and cocktail options to me.",
+                        user_id: demo.id,
+                        business_id: business4.id                       
+)
+
+business4r2 = Review.create!(rating: 1,
+                        description: "came on a rainy day and I had reservations but was still seated in the outside tent area. The tent was not that great and we got rained out quite a bit still and we could definitely feel all the wind that was blowing the rain on us.",
+                        user_id: u1.id,
+                        business_id: business4.id                       
+)
+
+business4r3 = Review.create!(rating: 4,
+                        description: "Very cute spot! Came here a few weeks ago and got the biscuits and gravy with a side of eggs and it was definitely tasty. The decor inside is super cute, and they have a nice outdoor set up as well. The service was friendly and prompt. I'd really like to come back as I get more comfortable with indoor dining as the real ambiance is indoors for sure.",
+                        user_id: u2.id,
+                        business_id: business4.id 
+)
+
+cabin_1 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Cabin+NYC/1.jpeg')
+cabin_2 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Cabin+NYC/2.jpeg')
+cabin_3 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Cabin+NYC/3.jpeg')
+cabin_4 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Cabin+NYC/4.jpeg')
+business4r1.pictures.attach(io: cabin_1, filename: 'cabin_1.jpeg')
+business4r2.pictures.attach(io: cabin_2, filename: 'cabin_2.jpeg')
+business4r3.pictures.attach(io: cabin_3, filename: 'cabin_3.jpeg')
+business4r3.pictures.attach(io: cabin_4, filename: 'cabin_4.jpeg')
 
 cat1 = Category.create!(category: 'Korean')
 cat2 = Category.create!(category: 'American')
 cat3 = Category.create!(category: 'Lunch')
+cat4 = Category.create!(category: 'Dinner')
+cat5 = Category.create!(category: 'Bar')
 
 b_c1 = BusinessCategory.create!(category_id: cat2.id,
                                 business_id: business1.id)                                
@@ -176,3 +222,8 @@ b_c5 = BusinessCategory.create!(category_id: cat3.id,
                                 business_id: business3.id)
 b_c6 = BusinessCategory.create!(category_id: cat1.id,
                                 business_id: business3.id)
+
+b_c7 = BusinessCategory.create!(category_id: cat2.id,
+                                business_id: business4.id)
+b_c8 = BusinessCategory.create!(category_id: cat5.id,
+                                business_id: business4.id)

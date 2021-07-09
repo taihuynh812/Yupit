@@ -33,6 +33,7 @@ GEM
       activemodel (= 5.2.6)
       activesupport (= 5.2.6)
       arel (>= 9.0)
+    activerecord-reset-pk-sequence (0.2.1)
     activestorage (5.2.6)
       actionpack (= 5.2.6)
       activerecord (= 5.2.6)
@@ -227,6 +228,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-reset-pk-sequence
   annotate
   aws-sdk-s3
   bcrypt
