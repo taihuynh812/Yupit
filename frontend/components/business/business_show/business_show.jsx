@@ -9,6 +9,7 @@ import ReviewIndexContainer from '../../review/review_index/review_index_contain
 class BusinessShow extends React.Component{
     constructor(props){
         super(props) 
+        this.props.fetchBusiness(this.props.match.params.businessId)
     }
     
     componentDidMount(){
@@ -32,17 +33,17 @@ class BusinessShow extends React.Component{
 
         while(increment < rating) {
             if ((rating - increment) > 1 ){
-                stars.push(<FontAwesomeIcon className="one-star-rating" icon={faStar} color='red' />);
+                stars.push(<FontAwesomeIcon className="one-star-rating" icon={faStar} color='red' key={rating-increment}/>);
                 increment++;
             } else {
                 if ((rating - increment) > 0.1 ){
-                    stars.push(<FontAwesomeIcon className="half-star-rating" icon={faStarHalfAlt} color='red' />);
+                    stars.push(<FontAwesomeIcon className="half-star-rating" icon={faStarHalfAlt} color='red' key={rating-increment}/>);
                     increment++;
                 }          
             } 
         }
         while(max > rating) {
-            stars.push(<FontAwesomeIcon className='max-rating' icon={RegFontAwesome.faStar} color='red'/>);
+            stars.push(<FontAwesomeIcon className='max-rating' icon={RegFontAwesome.faStar} color='red' key={max}/>);
             max--;
         }
         return stars;
@@ -50,7 +51,7 @@ class BusinessShow extends React.Component{
 
     render(){
         debugger
-        if (!this.props.business || !this.props.business.photoUrls || !this.users){
+        if (!this.props.business || !this.users){
             return (
                 <div>Loading...</div>
             )
@@ -70,7 +71,7 @@ class BusinessShow extends React.Component{
                                 {this.props.business.categories.map((category, i) => (
                                     <div className='business-categories' key={i}>{category.category}</div>
                                 ))}
-                                <div>{this.star(rating)} -- {this.props.business.reviews.length} reviews</div>
+                                <div className='business-show-rating'>{this.star(rating)}  {this.props.business.reviews.length} reviews</div>
                             </div>
                         </div>  
                     </div>

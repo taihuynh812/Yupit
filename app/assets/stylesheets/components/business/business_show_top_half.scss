@@ -4,23 +4,33 @@
 .business-images-container{
     display: flex;
     flex-wrap: nowrap;
-    position: relative;
     box-sizing: border-box;
     align-items: flex-start;
     left: 0;
     right: 0;
-    padding-left:  64px;
-    padding-right: 64px;
     padding-top: 40px;
     margin: auto;
+    padding-bottom: 40px;
+    border: 2px solid yellow;
+}
+
+.business-images-container::after{
+    background-blend-mode: overlay;
+    position: absolute;
+    background-image: linear-gradient(to bottom, transparent 50%, #000);
+    content: "";
+    padding-left:  64px;
+    padding-right: 64px;
+    height: 350px;
+    width: 100%;
 }
 
 .business-images{
     height: 350px;
     width: 570px;
     object-fit: cover;
-    vertical-align: middle;
 }
+
 
 .business-info-container{
     position: absolute;
@@ -30,11 +40,25 @@
 }
 
 .business-name{
+    font-family: Teko;
     font-size: 50px;
     color: white;
+    font-weight: bolder;
 }
 
 .business-categories{
     display: inline;
     padding-right: 10px;
+    margin-top: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.business-show-rating{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    color: white;
+
 }
