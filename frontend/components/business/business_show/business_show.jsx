@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from '../../nav_bar/nav_bar';
-
+import ReviewIndexContainer from '../../review/review_index_container';
 
 class BusinessShow extends React.Component{
 
@@ -52,6 +52,7 @@ class BusinessShow extends React.Component{
                             <div>{phone}</div>
                             <div>{website}</div>
                         </div>
+                        <div><ReviewIndexContainer business={this.props.business}/></div>
                     </div>
                     
                 </div>
