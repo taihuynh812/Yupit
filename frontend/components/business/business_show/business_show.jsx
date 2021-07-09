@@ -7,6 +7,8 @@ class BusinessShow extends React.Component{
     
     componentDidMount(){
         this.props.fetchBusiness(this.props.match.params.businessId)
+        this.props.fetchReviews(this.props.match.params.businessId)
+        this.props.fetchUsers()
     }
 
     avgRating(){
@@ -52,7 +54,7 @@ class BusinessShow extends React.Component{
                             <div>{phone}</div>
                             <div>{website}</div>
                         </div>
-                        <div><ReviewIndexContainer business={this.props.business}/></div>
+                        <div><ReviewIndexContainer fetchUsers={this.props.fetchUsers} business={this.props.business}/></div>
                     </div>
                     
                 </div>

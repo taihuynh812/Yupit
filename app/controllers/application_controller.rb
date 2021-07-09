@@ -22,4 +22,8 @@ class ApplicationController < ActionController::Base
         @current_user = nil
     end
 
+    def require_login
+        
+    end
+
 end

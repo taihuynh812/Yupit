@@ -1,0 +1,25 @@
+import * as ReviewAPIUtil from '../util/review_api_util';
+
+export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
+export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
+
+
+export const receiveReview = (review) => ({
+    type: RECEIVE_REVIEW,
+    review
+})
+
+export const receiveReviews = (reviews) => ({
+    type: RECEIVE_REVIEWS,
+    reviews
+})
+
+export const fetchReview = (businessId, reviewId) => (dispatch) => (
+    ReviewAPIUtil.fetchReview(businessId, reviewId)
+        .then(review => dispatch(receiveReview(review)))
+)
+
+export const fetchReviews = (businessId) => (dispatch) => (
+    ReviewAPIUtil.fetchReviews(businessId)
+        .then(reviews => dispatch(receiveReviews(reviews)))
+)

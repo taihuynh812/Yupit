@@ -4,7 +4,7 @@
 
         json.reviews do
             json.array! business.reviews do |review|
-                json.extract! review, :rating
+                json.extract! review, :id, :rating, :description, :user_id, :business_id
             end
         end
 

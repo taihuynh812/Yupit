@@ -24,8 +24,8 @@ class BusinessIndexItem extends React.Component{
                         <div className="business-index-picture-box"><img className="business-index-picture" src={this.props.business.photoUrls[0]} /> </div>
                         <div className="business-index-descript">
                             <div className="business-index-name">{this.props.business.name}</div>
-                            {this.props.business.categories.map((category) => (
-                                <div className='business-categories'>{category.category}</div>
+                            {this.props.business.categories.map((category, i) => (
+                                <div className='business-categories' key={i}>{category.category}</div>
                             ))}
                             <div>{rating} -- {this.props.business.reviews.length} reviews</div>
                         </div>
