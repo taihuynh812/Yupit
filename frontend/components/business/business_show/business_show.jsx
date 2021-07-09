@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import NavBar from '../../nav_bar/nav_bar';
 import ReviewIndexContainer from '../../review/review_index/review_index_container';
-import ReviewSubmitContainer from '../../review/review_new/review_submit_container';
 
 class BusinessShow extends React.Component{
     constructor(props){
@@ -49,6 +49,8 @@ class BusinessShow extends React.Component{
                     </div>
                     <div className='business-show-body-container'>
 
+                        <Link to={`/businesses/${this.props.business.id}/reviews/new`}><button>Write a Review</button></Link>
+                        
                         <div className="business-schedule-container">
                             <div className="schedule-day">Monday: <div className='schedule-time'>{mon_fri}</div></div>
                             <div className="schedule-day">Tuesday: <div className='schedule-time'>{mon_fri}</div></div>
@@ -68,7 +70,6 @@ class BusinessShow extends React.Component{
                             <div>{website}</div>
                         </div>
 
-                        <div><ReviewSubmitContainer currentUser={this.props.currentUser}/></div>
                         <div><ReviewIndexContainer users={this.users.users} business={this.props.business}/></div>
                     </div>
                     
