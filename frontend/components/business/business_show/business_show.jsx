@@ -50,7 +50,6 @@ class BusinessShow extends React.Component{
     };
 
     render(){
-        debugger
         if (!this.props.business || !this.users){
             return (
                 <div>Loading...</div>
@@ -60,45 +59,64 @@ class BusinessShow extends React.Component{
             const {name, address, city, state, zipcode, phone, website, mon_fri, sat_sun} = this.props.business
             return(
                 <div>
+                    {/* --------------NAV BAR---------------- */}
                     <div className='business-nav-bar-container'><NavBar/></div>
-                    <div className='business-show-header-container'>
-                        <div className="business-images-container">
-                            {this.props.business.photoUrls.map((photoUrl, i) => (
-                                <img key={i} className="business-images" src={photoUrl} />
-                            ))}
+                    {/* --------------PHOTO HEADER---------------- */}
+                    <div className="business-show-photo-header-outter">
+                        <div className='business-show-header-container'>
+
                             <div className='business-info-container'>
-                                <h1 className='business-name'>{name}</h1>
-                                {this.props.business.categories.map((category, i) => (
-                                    <div className='business-categories' key={i}>{category.category}</div>
-                                ))}
-                                <div className='business-show-rating'>{this.star(rating)}  {this.props.business.reviews.length} reviews</div>
+                                <div className="business-info">
+                                    <h1 className='business-name'>{name}</h1>
+                                    {this.props.business.categories.map((category, i) => (
+                                        <div className='business-categories' key={i}>{category.category}</div>
+                                    ))}
+                                    <div className='business-show-rating'>{this.star(rating)}  {this.props.business.reviews.length} reviews</div>
+                                </div>
                             </div>
-                        </div>  
+
+                            <div className="business-images-container">
+                                {this.props.business.photoUrls.map((photoUrl, i) => (
+                                    <img key={i} className="business-images" src={photoUrl} />
+                                ))}
+                            </div>  
+                            
+                        </div>
                     </div>
-                    <div className='business-show-body-container'>
+                    {/* --------------BUSINESS-SHOW-BODY---------------- */}
+                    <div className='business-show-body-container-outter'>
+                        <div className='business-show-body-container-inner'>
+                            <div className='business-show-body-table-layout'>
+                                {/* --------------LEFT SIDE---------------- */}
+                                <div className='body-container-left'>
+                                    <Link to={`/businesses/${this.props.business.id}/reviews/new`}><button className="business-show-write-review">Write a Review</button></Link>
+                                
+                                    <div className="business-schedule-container">
+                                        <div className="schedule-day">Monday: <div className='schedule-time'>{mon_fri}</div></div>
+                                        <div className="schedule-day">Tuesday: <div className='schedule-time'>{mon_fri}</div></div>
+                                        <div className="schedule-day">Wednesday: <div className='schedule-time'>{mon_fri}</div></div>
+                                        <div className="schedule-day">Thursday: <div className='schedule-time'>{mon_fri}</div></div>
+                                        <div className="schedule-day">Friday: <div className='schedule-time'>{mon_fri}</div></div>
+                                        <div className="schedule-day">Saturday: <div className='schedule-time'>{sat_sun}</div></div>
+                                        <div className="schedule-day">Sunday: <div className='schedule-time'>{sat_sun}</div></div>            
+                                    </div>
 
-                        <Link to={`/businesses/${this.props.business.id}/reviews/new`}><button>Write a Review</button></Link>
-                        
-                        <div className="business-schedule-container">
-                            <div className="schedule-day">Monday: <div className='schedule-time'>{mon_fri}</div></div>
-                            <div className="schedule-day">Tuesday: <div className='schedule-time'>{mon_fri}</div></div>
-                            <div className="schedule-day">Wednesday: <div className='schedule-time'>{mon_fri}</div></div>
-                            <div className="schedule-day">Thursday: <div className='schedule-time'>{mon_fri}</div></div>
-                            <div className="schedule-day">Friday: <div className='schedule-time'>{mon_fri}</div></div>
-                            <div className="schedule-day">Saturday: <div className='schedule-time'>{sat_sun}</div></div>
-                            <div className="schedule-day">Sunday: <div className='schedule-time'>{sat_sun}</div></div>            
+                                    <div className ='business-location-container'>
+                                        <div>{address} {city}, {state} {zipcode}</div>
+                                    </div>
+
+                                    <div><ReviewIndexContainer users={this.users.users} business={this.props.business}/></div>
+                                </div>   
+                                {/* --------------RIGHT SIDE---------------- */}
+                                <div className='body-container-right'>
+                                    <div className='business-contact-container'> 
+                                        <div>{phone}</div>
+                                        <div>{website}</div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
-
-                        <div className ='business-location-container'>
-                            <div>{address} {city}, {state} {zipcode}</div>
-                        </div>
-
-                        <div className='business-info-container'> 
-                            <div>{phone}</div>
-                            <div>{website}</div>
-                        </div>
-
-                        <div><ReviewIndexContainer users={this.users.users} business={this.props.business}/></div>
                     </div>
                     
                 </div>
