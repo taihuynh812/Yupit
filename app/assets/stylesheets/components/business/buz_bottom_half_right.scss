@@ -1,6 +1,8 @@
 .body-container-right{
-    float: right;
-    width: 300px;
-    border: 10px solid black;
+    display: table-cell;
+    box-sizing: border-box;
+    width: 33.33%;
+    vertical-align: top;
+    padding-left: 20px;
     background: lightblue;
 }

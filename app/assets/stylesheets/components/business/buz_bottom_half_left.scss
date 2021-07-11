@@ -1,6 +1,43 @@
 .body-container-left{
-    float: left;
-    width: calc(100% - 300px);
-    border: 5px solid green;
+    display: table-cell;
+    box-sizing: border-box;
+    width: 66.67%;
+    vertical-align: top;
+    padding-right: 20px;
     background: pink;
 }
+
+.body-container-left > div{
+    border-top: 1px gray solid;
+    padding-top: 25px;
+    margin-top: 25px;
+}
+
+.business-show-write-review{
+    margin-top: 15px;
+    margin-bottom: -10px;
+    color: white;
+    background-color: red;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+// LOCATION & SCHEDULE
+.location-and-schedule{
+    display: table;
+    min-width: 100%;
+    > div {
+        display: table-cell;
+    }
+}
+
+.schedule{
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    > div {
+        display: inline-block;
+        font-weight: bold;
+    }
+}
+
