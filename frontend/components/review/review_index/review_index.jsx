@@ -24,11 +24,10 @@ class ReviewIndex extends React.Component{
                         <br />
                         {reviews.map((review, i) => {
                             return (
-                            <div className='review-details' key={i}>
-                                <div>{review.user.username}</div>
-                                <div>{this.props.star(review.rating)} {review.created_at}</div>
-                                
-                                <div>{review.description}</div>
+                            <div className='review-details-container' key={i}>
+                                <div className='reviewer-name'>{review.user.username}</div>
+                                <div className='review-date'>{this.props.star(review.rating)} {review.created_at}</div>
+                                <div className='review-description'>{review.description}</div>
                             </div>    
                             )})}
                     </div>

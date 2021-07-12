@@ -20,12 +20,12 @@ class BusinessIndexItem extends React.Component{
 
     star(rate) {
         let stars = [];
-        let rating = Math.round(rate);
+        let rating = rate;
         var increment = 0;
         var max = 5; 
 
         while(increment < rating) {
-            if ((rating - increment) > 1 ){
+            if ((rating - increment) >= 1 ){
                 stars.push(<FontAwesomeIcon className="one-star-rating" icon={faStar} color='red' key={rating-increment}/>);
                 increment++;
             } else {
@@ -35,7 +35,7 @@ class BusinessIndexItem extends React.Component{
                 }          
             } 
         }
-        while(max > rating) {
+        while(max - rating >= 1) {
             stars.push(<FontAwesomeIcon className='max-rating' icon={RegFontAwesome.faStar} color='red' key={max}/>);
             max--;
         }
@@ -44,17 +44,23 @@ class BusinessIndexItem extends React.Component{
 
     render(){
         const rating = this.avgRating()
+        const {id, categories, name, reviews, photoUrls} = this.props.business
         return(
             <div>
                 <div className="business-index-list">
-                    <Link to={`/businesses/${this.props.business.id}`}>
-                        <div className="business-index-picture-box"><img className="business-index-picture" src={this.props.business.photoUrls[0]} /> </div>
+                    <Link to={`/businesses/${id}`}>
+                        <div className="business-index-picture-box">
+                            <img className="business-index-picture" src={photoUrls[0]} /> 
+                        </div>
                         <div className="business-index-descript">
-                            <div className="business-index-name">{this.props.business.name}</div>
-                            {this.props.business.categories.map((category, i) => (
-                                <div className='business-categories' key={i}>{category.category}</div>
+                            <div className="business-index-name">{name}</div>
+                            <div className='business-index-rating'>{this.star(rating)} {reviews.length} reviews</div>
+                            {categories.map((category, i) => (
+                                <div className='business-index-categories' key={i}>
+                                    {category.category} 
+                                    {i < categories.length - 1 ? "," : ""}
+                                </div>
                             ))}
-                            <div className='bus-index-rating-container'>{this.star(rating)} - {this.props.business.reviews.length} reviews</div>
                         </div>
                     </Link>
                 </div>

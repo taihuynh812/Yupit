@@ -12,8 +12,25 @@
     border-radius: 7px;
 }
 
+.business-index-list a{
+    text-decoration: none;
+}
+
+.business-index-descript > div{
+    margin-left: 10px;
+    padding-bottom: 5px;
+}
+
+.business-index-categories{
+    display: inline;
+    color: black
+}
 
 .business-index-picture {
     height: 180px;
     width: 300px;
+}
+
+.business-index-rating{
+    color: black
 }

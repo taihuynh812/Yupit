@@ -1,0 +1,20 @@
+.recommended-reviews{
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.review-details-container{
+    padding-bottom: 15px;
+    > .reviewer-name {
+        font-weight: bold;
+    }
+    > .review-date {
+        color: gray;
+    }
+}
+
+.review-details-container > div{
+    padding-bottom: 10px;
+}
+
