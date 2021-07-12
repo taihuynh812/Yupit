@@ -20,13 +20,14 @@ class ReviewIndex extends React.Component{
             return(
                 <div className="review-index-wrapper">
                     <div className='review-index-container'>
-                        <h1>Reviews</h1>
+                        <h1 className="recommended-reviews">Recommended Reviews</h1>
+                        <br />
                         {reviews.map((review, i) => {
                             return (
                             <div className='review-details' key={i}>
                                 <div>{review.user.username}</div>
-                                <div>{review.created_at}</div>
-                                <div>{review.rating}</div>
+                                <div>{this.props.star(review.rating)} {review.created_at}</div>
+                                
                                 <div>{review.description}</div>
                             </div>    
                             )})}

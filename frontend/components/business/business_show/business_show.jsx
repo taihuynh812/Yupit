@@ -27,12 +27,12 @@ class BusinessShow extends React.Component{
 
     star(rate) {
         let stars = [];
-        let rating = Math.round(rate);
+        let rating = rate;
         var increment = 0;
         var max = 5; 
 
         while(increment < rating) {
-            if ((rating - increment) > 1 ){
+            if ((rating - increment) >= 1 ){
                 stars.push(<FontAwesomeIcon className="one-star-rating" icon={faStar} color='red' key={rating-increment}/>);
                 increment++;
             } else {
@@ -42,7 +42,7 @@ class BusinessShow extends React.Component{
                 }          
             } 
         }
-        while(max > rating) {
+        while(max - rating >= 1) {
             stars.push(<FontAwesomeIcon className='max-rating' icon={RegFontAwesome.faStar} color='red' key={max}/>);
             max--;
         }
@@ -125,7 +125,7 @@ class BusinessShow extends React.Component{
                                     </div>
                                 </div>
 
-                                    <div><ReviewIndexContainer users={this.users.users} business={this.props.business}/></div>
+                                    <div><ReviewIndexContainer star={this.star} users={this.users.users} business={this.props.business}/></div>
                                 </div>   
                                 {/* --------------RIGHT SIDE---------------- */}
                                 <div className='body-container-right'>

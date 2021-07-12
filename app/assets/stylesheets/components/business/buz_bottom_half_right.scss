@@ -4,5 +4,21 @@
     width: 33.33%;
     vertical-align: top;
     padding-left: 20px;
-    background: lightblue;
+}
+
+.business-contact-container{
+    border: 1px rgb(165, 161, 161) solid;
+    border-radius: 3px; 
+}
+
+.business-contact-container > div{
+    border-bottom: 1px gray solid;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.business-contact-container > div:last-child{
+    border-bottom: none;
 }
