@@ -52,11 +52,10 @@ class ReviewSubmit extends React.Component{
     }
 
     submit(e){
-        // debugger
         const {business_id} = this.state
         e.preventDefault()
         this.props.createReview(business_id, this.state)
-            .then(() => this.props.history.push(`/businesses/${business_id}`))
+            // .then(() => this.props.history.push(`/businesses/${business_id}`))
     }
 
     showErrors(){
@@ -77,31 +76,35 @@ class ReviewSubmit extends React.Component{
         } else {
             return(
                 <div className='review-submit-wrapper'>
-                    <div className='nav-bar-wrapper'>
-                        <Link className='nav-bar-logo' to='/'><img className="nav-bar-yupit-logo" src="https://lh3.googleusercontent.com/pw/AM-JKLVGlt2Z46Kdqcrwfyey_PGG8Lrr1Amu9TB4yKE5_1C71ypwoy96PzwUb_6zmFc7CPpUvSYSOzS8f87dAzaqmV-NnA0XzR3NOf8f_c-LI6FGZ55cUNoTFK6ApvMmlNM4koEyK2MTIrZDIz6fbv4piEc=w522-h478-no?authuser=0" /></Link>
-                        <div className='nav-bar-session'><NavbarGreetingContainer/></div>
-                    </div>
-                    <form className='review-submit-form' onSubmit={this.submit}>
-                        <h1>Write your review for {this.props.business.name}</h1>
-                        {this.showErrors()}
-                        <div className='review-submit-rating-container'>
-                            <Rating 
-                                initialRating= {this.state.rating}
-                                className= "review-submit-rating"
-                                emptySymbol= {<FontAwesomeIcon icon={RegFontAwesome.faStar} color='red' />}
-                                fullSymbol= {<FontAwesomeIcon icon={faStar} color='red'/>}
-                                onHover= {this.hover}
-                                onClick= {this.updateRating}
-                            />
-                            <p id="rating-text">Select your rating</p>
-                            <textarea 
-                                className="review-submit-description" 
-                                value={this.state.description} 
-                                onChange={this.update('description')}>
-                            </textarea>
+                    <div className='review-nav-bar'>
+                        <div className='nav-bar-wrapper'>
+                            <Link className='nav-bar-logo' to='/'><img className="nav-bar-yupit-logo" src="https://lh3.googleusercontent.com/pw/AM-JKLVGlt2Z46Kdqcrwfyey_PGG8Lrr1Amu9TB4yKE5_1C71ypwoy96PzwUb_6zmFc7CPpUvSYSOzS8f87dAzaqmV-NnA0XzR3NOf8f_c-LI6FGZ55cUNoTFK6ApvMmlNM4koEyK2MTIrZDIz6fbv4piEc=w522-h478-no?authuser=0" /></Link>
+                            <div className='nav-bar-session'><NavbarGreetingContainer/></div>
                         </div>
-                        <button type='submit' className="Review-submit-button">Post Review</button>
-                    </form>
+                    </div>
+                    <div className='review-form-body-container'>
+                        <div className='review-form-header'>Write your review for {this.props.business.name}</div>
+                        <form className='review-submit-form' onSubmit={this.submit}>
+                            <div className='review-submit-rating-container'>
+                                <Rating 
+                                    initialRating= {this.state.rating}
+                                    className= "review-submit-rating"
+                                    emptySymbol= {<FontAwesomeIcon icon={RegFontAwesome.faStar} color='red' />}
+                                    fullSymbol= {<FontAwesomeIcon icon={faStar} color='red'/>}
+                                    onHover= {this.hover}
+                                    onClick= {this.updateRating}
+                                />
+                                <p id="rating-text">Select your rating</p>
+                                <textarea 
+                                    className="review-submit-description" 
+                                    value={this.state.description} 
+                                    onChange={this.update('description')}>
+                                </textarea>
+                                {this.showErrors()}
+                            </div>
+                            <button type='submit' className="Review-submit-button">Post Review</button>
+                        </form>
+                    </div>
                 </div>
                 
             )

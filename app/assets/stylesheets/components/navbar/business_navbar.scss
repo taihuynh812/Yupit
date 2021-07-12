@@ -50,6 +50,7 @@
 .navbar-greeting-user-container{
     position: relative;
     font-size: 30px;
+    cursor: pointer;
 }
 
 .drop-down-close{
@@ -100,6 +101,5 @@
 
 .user-dropdown-log-out{
     margin-top: 5px;
-    padding-bottom: 5px;
     border-top: 1px solid gray;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../../nav_bar/nav_bar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faStarHalfAlt, faPhone, faExternalLinkAlt, faDirections } from '@fortawesome/free-solid-svg-icons'
 import * as RegFontAwesome from '@fortawesome/free-regular-svg-icons'
 import ReviewIndexContainer from '../../review/review_index/review_index_container';
 
@@ -137,8 +137,23 @@ class BusinessShow extends React.Component{
                                 {/* --------------RIGHT SIDE---------------- */}
                                 <div className='body-container-right'>
                                     <div className='business-contact-container'> 
-                                        <div>{phone}</div>
-                                        <div>{website}</div>
+                                        <div className="business-contact-phone">
+                                            <div>{phone}</div>
+                                            <div className='contact-icon'><FontAwesomeIcon icon={faPhone}/></div>  
+                                        </div>
+                                        <div className="business-contact-website">
+                                            <div>{website}</div>
+                                            <div className='contact-icon'><FontAwesomeIcon icon={faExternalLinkAlt}/></div>  
+                                        </div>
+                                        <div className="business-contact-direction">
+                                            <div>{address}</div>
+                                            <div className='contact-icon'><FontAwesomeIcon icon={faDirections}/></div>  
+                                        </div>
+                                        <div className="business-contact-message">
+                                            <div>Message the business</div>
+                                            <div className='contact-icon'><FontAwesomeIcon icon={RegFontAwesome.faComment}/></div>  
+                                        </div>
+                                        
                                     </div>
                                 </div>
 

@@ -5,7 +5,6 @@ export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
 export const REMOVE_REVIEW = 'REMOVE_REVIEW'
 export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS"
 
-
 export const receiveReview = (review) => {
     // debugger
     return {
@@ -31,9 +30,6 @@ export const receiveReviewErrors = (errors) => {
         errors
     }
 }
-
-
-
 
 export const fetchReview = (businessId, reviewId) => (dispatch) => (
     ReviewAPIUtil.fetchReview(businessId, reviewId)

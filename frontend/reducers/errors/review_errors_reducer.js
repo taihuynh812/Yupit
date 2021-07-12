@@ -8,7 +8,7 @@ const reviewErrorsReducer = (state=[], action) => {
         case RECEIVE_REVIEW_ERRORS:
             return action.errors
         default: 
-            return []
+            return state
     }
 }
 

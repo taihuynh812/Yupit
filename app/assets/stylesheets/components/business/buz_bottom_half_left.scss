@@ -13,10 +13,16 @@
 }
 
 .business-show-write-review{
+    font-size: 24px;
     color: white;
     background-color: red;
     padding: 7px;
     border-radius: 5px;
+}
+
+.business-show-write-review:hover{
+    cursor: pointer;
+    box-shadow: 0 0 18px rgba(0,0,0,0.1);
 }
 
 // LOCATION & SCHEDULE
@@ -31,7 +37,7 @@
 .schedule{
     display: flex;
     justify-content: space-between;
-    width: 200px;
+    width: 250px;
     > div {
         display: inline-block;
         font-weight: bold;
