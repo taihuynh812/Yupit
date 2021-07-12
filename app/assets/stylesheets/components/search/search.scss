@@ -26,6 +26,9 @@
     } 
 }
 
-.nav-bar-wrapper .searchbar-form > button{
-    height: 120%;
+.nav-bar-wrapper .searchbar-form {
+    padding-bottom: 15px;
+    > button{
+        height: 120%;
+    }
 }

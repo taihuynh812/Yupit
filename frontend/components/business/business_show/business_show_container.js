@@ -6,8 +6,8 @@ import { fetchUsers } from '../../../actions/user';
 import BusinessShow from './business_show';
 
 const mSTP = (state, ownProps) => ({
-    currentUser: state.entities.users[state.session.id],
     business: state.entities.businesses[ownProps.match.params.businessId],
+    users: state.entities.users
 })
 
 const mDTP = (dispatch, ownProps) => ({

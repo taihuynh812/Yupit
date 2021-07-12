@@ -10,11 +10,13 @@ class BusinessShow extends React.Component{
     constructor(props){
         super(props) 
         this.props.fetchBusiness(this.props.match.params.businessId)
+        this.props.fetchUsers()
     }
     
     componentDidMount(){
-        this.props.fetchBusiness(this.props.match.params.businessId)
-        this.props.fetchUsers().then(payload => (this.users = payload))
+        // debugger
+        // this.props.fetchBusiness(this.props.match.params.businessId)
+        // this.props.fetchUsers().then(payload => (this.users = payload))
     }
 
     avgRating(){
@@ -50,13 +52,15 @@ class BusinessShow extends React.Component{
     };
 
     render(){
-        if (!this.props.business || !this.users){
+        // debugger
+        if (!this.props.business || !this.props.users){
             return (
                 <div>Loading...</div>
             )
         } else {
+            // debugger
             const rating = this.avgRating()
-            const {name, address, city, state, zipcode, phone, website, mon_fri, sat_sun} = this.props.business
+            const {id, name, address, city, state, zipcode, phone, website, mon_fri, sat_sun, categories, photoUrls, reviews} = this.props.business
             return(
                 <div>
                     {/* --------------NAV BAR---------------- */}
@@ -68,15 +72,15 @@ class BusinessShow extends React.Component{
                             <div className='business-info-container'>
                                 <div className="business-info">
                                     <h1 className='business-name'>{name}</h1>
-                                    {this.props.business.categories.map((category, i) => (
+                                    {categories.map((category, i) => (
                                         <div className='business-categories' key={i}>{category.category}</div>
                                     ))}
-                                    <div className='business-show-rating'>{this.star(rating)}  {this.props.business.reviews.length} reviews</div>
+                                    <div className='business-show-rating'>{this.star(rating)}  {reviews.length} reviews</div>
                                 </div>
                             </div>
 
                             <div className="business-images-container">
-                                {this.props.business.photoUrls.map((photoUrl, i) => (
+                                {photoUrls.map((photoUrl, i) => (
                                     <img key={i} className="business-images" src={photoUrl} />
                                 ))}
                             </div>  
@@ -89,7 +93,7 @@ class BusinessShow extends React.Component{
                             <div className='business-show-body-table-layout'>
                                 {/* --------------LEFT SIDE---------------- */}
                                 <div className='body-container-left'>
-                                    <Link to={`/businesses/${this.props.business.id}/reviews/new`}><button className="business-show-write-review"><FontAwesomeIcon icon={RegFontAwesome.faStar} color='white'/> Write a Review</button></Link>
+                                    <Link to={`/businesses/${id}/reviews/new`}><button className="business-show-write-review"><FontAwesomeIcon icon={RegFontAwesome.faStar} color='white'/> Write a Review</button></Link>
                                 
                                 <div className='location-and-schedule'>
                                     <div className='location-container'>
@@ -125,7 +129,7 @@ class BusinessShow extends React.Component{
                                     </div>
                                 </div>
 
-                                    <div><ReviewIndexContainer star={this.star} users={this.users.users} business={this.props.business}/></div>
+                                    <div><ReviewIndexContainer star={this.star} users={this.props.users} business={this.props.business}/></div>
                                 </div>   
                                 {/* --------------RIGHT SIDE---------------- */}
                                 <div className='body-container-right'>
