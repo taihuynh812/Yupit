@@ -98,36 +98,42 @@ class BusinessShow extends React.Component{
                                 <div className='body-container-left'>
                                     <Link to={`/businesses/${id}/reviews/new`}><button className="business-show-write-review"><FontAwesomeIcon icon={RegFontAwesome.faStar} color='white'/> Write a Review</button></Link>
                                 
-                                <div className='location-and-schedule'>
-                                    <div className='location-container'>
-                                        <div className ='business-location-container'>
-                                            <div>{address} {city}, {state} {zipcode}</div>
-                                        </div>
-                                    </div>
+                                <div className='location-and-schedule-container'>
+                                    {/* Header title */}
+                                    <span id="location-and-schedule-header">Location & Hours</span>
 
-                                    <div className='schedule-container'>
-                                        <div className="business-schedule-container">
-                                            <div className="schedule">
-                                                <div className="schedule-day">Monday: </div> 
-                                                <div className='schedule-time'>{mon_fri}</div></div>
-                                            <div className="schedule">
-                                                <div className="schedule-day">Tuesday: </div> 
-                                                <div className='schedule-time'>{mon_fri}</div></div>
-                                            <div className="schedule">
-                                                <div className="schedule-day">Wednesday: </div> 
-                                                <div className='schedule-time'>{mon_fri}</div></div>
-                                            <div className="schedule">
-                                                <div className="schedule-day">Thursday: </div> 
-                                                <div className='schedule-time'>{mon_fri}</div></div>
-                                            <div className="schedule">
-                                                <div className="schedule-day">Friday: </div> 
-                                                <div className='schedule-time'>{mon_fri}</div></div>
-                                            <div className="schedule">
-                                                <div className="schedule-day">Saturday: </div> 
-                                                <div className='schedule-time'>{sat_sun}</div></div>
-                                            <div className="schedule">
-                                                <div className="schedule-day">Sunday: </div> 
-                                                <div className='schedule-time'>{sat_sun}</div></div>            
+                                    <div className='location-and-schedule'>
+                                        {/* Location */}
+                                        <div className='location-container'>
+                                            <div className ='business-location-container'>
+                                                <div>{address} {city}, {state} {zipcode}</div>
+                                            </div>
+                                        </div>
+                                        {/* Schedule */}
+                                        <div className='schedule-container'>
+                                            <div className="business-schedule-container">
+                                                <div className="schedule">
+                                                    <div className="schedule-day">Monday: </div> 
+                                                    <div className='schedule-time'>{mon_fri}</div></div>
+                                                <div className="schedule">
+                                                    <div className="schedule-day">Tuesday: </div> 
+                                                    <div className='schedule-time'>{mon_fri}</div></div>
+                                                <div className="schedule">
+                                                    <div className="schedule-day">Wednesday: </div> 
+                                                    <div className='schedule-time'>{mon_fri}</div></div>
+                                                <div className="schedule">
+                                                    <div className="schedule-day">Thursday: </div> 
+                                                    <div className='schedule-time'>{mon_fri}</div></div>
+                                                <div className="schedule">
+                                                    <div className="schedule-day">Friday: </div> 
+                                                    <div className='schedule-time'>{mon_fri}</div></div>
+                                                <div className="schedule">
+                                                    <div className="schedule-day">Saturday: </div> 
+                                                    <div className='schedule-time'>{sat_sun}</div></div>
+                                                <div className="schedule">
+                                                    <div className="schedule-day">Sunday: </div> 
+                                                    <div className='schedule-time'>{sat_sun}</div></div>            
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
