@@ -9,8 +9,8 @@ class Search extends React.Component{
         return(
             <div className='searchbar-container'>
                 <form className='searchbar-form'>
-                    <input type="text" className='keyword-search' />
-                    <input type="text" className='location-search' />
+                    <input type="text" className='keyword-search' placeholder="Search food"/>
+                    <input type="text" className='location-search' placeholder='Location'/>
                     <button type='submit'><FontAwesomeIcon icon={faSearch} /></button>
                 </form>
                 

@@ -18,16 +18,22 @@
     float: right;
 }
 
-.top-half-page .yupit-logo{
+.middle-of-photo-header{
     position: absolute;
-    flex-shrink: 0;
+    width: 100%;
+}
+
+.middle-of-photo-header > div{
+    text-align: center;
+    padding-bottom: 40px;
 }
 
 .yupit-logo > img {
     height: 200px;
     width: auto;
-
 }
+
+
 
 .header-container > .nav-bar{
     vertical-align: top;

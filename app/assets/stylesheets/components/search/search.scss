@@ -1,0 +1,31 @@
+.searchbar-container{
+    
+    min-width: 600px;
+}
+
+.searchbar-form{
+    height: 30px;
+    font-size: 0;
+    padding-left: 45px;
+    > input{
+        width: 300px;
+        height: 100%;
+        margin-left: -5px;
+    }
+    > button{
+        height: 115%;
+        width: 40px;
+        margin-top: 5px;
+        margin-left: -5px;
+        color: white;
+        background-color: #de3333;
+        border: 0;
+        box-shadow: none;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    } 
+}
+
+.nav-bar-wrapper .searchbar-form > button{
+    height: 120%;
+}
