@@ -46,3 +46,60 @@
 .navbar-signup-button{
     display: inline-block;
 }
+
+.navbar-greeting-user-container{
+    position: relative;
+    font-size: 30px;
+}
+
+.drop-down-close{
+    display: none;
+    position: absolute;
+}
+
+.drop-down-open{
+    display: block;
+    position: absolute;
+    margin-top: 10px;
+    z-index: 1;
+    background-color: white;
+    width: 240px;
+    right: 0;
+    border-radius: 3px;
+    box-shadow: 0 0 18px rgba(0,0,0,0.2);
+
+    > div {
+        padding: 10px;
+        text-transform: none;
+        font-size: 20px;
+        font-weight: normal;
+    }
+}
+
+.drop-down-container{
+
+    > div {
+        width: 175px;
+        height: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+
+        > div {
+            width: 100%;
+            display: inline;
+            padding-right: 10px;
+        }
+    }
+}
+
+.drop-down-container > div:hover {
+    background-color: lightgray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-dropdown-log-out{
+    margin-top: 5px;
+    padding-bottom: 5px;
+    border-top: 1px solid gray;
+}
