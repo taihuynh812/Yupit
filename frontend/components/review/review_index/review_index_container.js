@@ -8,7 +8,7 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = (dispatch) => ({
     fetchReviews: (businessId) => dispatch(fetchReviews(businessId)),
-    deleteReview: (reviewId) => dispatch(deleteReview(reviewId))
+    deleteReview: (businessId, reviewId) => dispatch(deleteReview(businessId, reviewId))
 })
 
 export default connect(mSTP, mDTP)(ReviewIndex)
