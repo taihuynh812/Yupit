@@ -118,9 +118,9 @@ business2r4 = Review.create!(rating: 1,
                         business_id: business2.id                       
 )
 
-barn_1 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Barn+Joo+35/1.jpeg')
+barn_1 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Barn+Joo+35/3.jpeg')
 barn_2 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Barn+Joo+35/2.jpeg')
-barn_3 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Barn+Joo+35/3.jpeg')
+barn_3 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Barn+Joo+35/1.jpeg')
 barn_4 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Barn+Joo+35/4.jpeg')
 business2r1.pictures.attach(io: barn_1, filename: 'bern_joo_1.jpeg')
 business2r2.pictures.attach(io: barn_2, filename: 'bern_joo_2.jpeg')

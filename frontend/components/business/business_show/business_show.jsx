@@ -73,7 +73,10 @@ class BusinessShow extends React.Component{
                                 <div className="business-info">
                                     <h1 className='business-name'>{name}</h1>
                                     {categories.map((category, i) => (
-                                        <div className='business-categories' key={i}>{category.category}</div>
+                                        <div className='business-categories' key={i}>
+                                            {category.category}
+                                            {i < categories.length - 1 ? "," : ""}
+                                        </div>
                                     ))}
                                     <div className='business-show-rating'>{this.star(rating)}  {reviews.length} reviews</div>
                                 </div>

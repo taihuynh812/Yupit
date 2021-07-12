@@ -1,11 +1,12 @@
 .business-show-body-container-outter{
-    min-width: 1300px;
+    min-width: 1400px;
+    max-width: 100%;
     margin-top: 40px;
     // border: 3px solid blue
 }
 
 .business-show-body-container-inner{
-    min-width: 1200px;
+    max-width: 1200px;
     padding: 0 350px;
     margin: 0 auto;
     // border: 2px solid red
