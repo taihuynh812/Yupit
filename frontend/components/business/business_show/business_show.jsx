@@ -129,7 +129,7 @@ class BusinessShow extends React.Component{
                                     </div>
                                 </div>
 
-                                    <div><ReviewIndexContainer star={this.star} users={this.props.users} business={this.props.business}/></div>
+                                    <div><ReviewIndexContainer currentUser={this.props.currentUser} star={this.star} users={this.props.users} business={this.props.business}/></div>
                                 </div>   
                                 {/* --------------RIGHT SIDE---------------- */}
                                 <div className='body-container-right'>

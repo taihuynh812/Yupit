@@ -7,7 +7,8 @@ import BusinessShow from './business_show';
 
 const mSTP = (state, ownProps) => ({
     business: state.entities.businesses[ownProps.match.params.businessId],
-    users: state.entities.users
+    users: state.entities.users,
+    currentUser: state.entities.users[state.session.id]
 })
 
 const mDTP = (dispatch, ownProps) => ({

@@ -6,13 +6,16 @@ import * as RegFontAwesome from '@fortawesome/free-regular-svg-icons'
 import { Link } from 'react-router-dom';
 import NavbarGreetingContainer from '../../nav_bar/navbar_greeting_container';
 
-class ReviewSubmit extends React.Component{
+class ReviewUpdate extends React.Component{
 
     constructor(props){
         super(props)
         this.state = {
             rating: "",
-            user_id: this.props.user_id,
+            description: "",
+            user_id: "",
+            business_id: "",
+            id: ""
         }
         this.hover = this.hover.bind(this)
         this.submit = this.submit.bind(this)
@@ -21,6 +24,13 @@ class ReviewSubmit extends React.Component{
 
     componentDidMount(){
         this.props.fetchBusiness(this.props.match.params.businessId).then(() => this.setState( {business_id: this.props.business.id} ))
+            .then(this.props.fetchReviews(this.props.match.params.businessId))
+                .then(() => this.setState({
+                    rating: this.props.review.rating,
+                    description: this.props.review.description,
+                    user_id: this.props.user_id,
+                    id: this.props.review.id
+            }))
     }
 
     componentWillUnmount(){
@@ -55,7 +65,7 @@ class ReviewSubmit extends React.Component{
         // debugger
         const {business_id} = this.state
         e.preventDefault()
-        this.props.createReview(business_id, this.state)
+        this.props.updateReview(business_id, this.state)
             .then(() => this.props.history.push(`/businesses/${business_id}`))
     }
 
@@ -93,14 +103,14 @@ class ReviewSubmit extends React.Component{
                                 onHover= {this.hover}
                                 onClick= {this.updateRating}
                             />
-                            <p id="rating-text">Select your rating</p>
+                            <p id="rating-text"></p>
                             <textarea 
                                 className="review-submit-description" 
                                 value={this.state.description} 
                                 onChange={this.update('description')}>
                             </textarea>
                         </div>
-                        <button type='submit' className="Review-submit-button">Post Review</button>
+                        <button type='submit' className="Review-submit-button">Update Review</button>
                     </form>
                 </div>
                 
@@ -109,4 +119,4 @@ class ReviewSubmit extends React.Component{
     }
 }
 
-export default ReviewSubmit
+export default ReviewUpdate

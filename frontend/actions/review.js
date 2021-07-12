@@ -6,10 +6,13 @@ export const REMOVE_REVIEW = 'REMOVE_REVIEW'
 export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS"
 
 
-export const receiveReview = (review) => ({
-    type: RECEIVE_REVIEW,
-    review
-})
+export const receiveReview = (review) => {
+    // debugger
+    return {
+        type: RECEIVE_REVIEW,
+        review
+    }
+}
 
 export const receiveReviews = (reviews) => ({
     type: RECEIVE_REVIEWS,
@@ -21,10 +24,14 @@ export const removeReviews = (reviewId) => ({
     reviewId
 })
 
-export const receiveReviewErrors = (errors) => ({
-    type: RECEIVE_REVIEW_ERRORS,
-    errors
-})
+export const receiveReviewErrors = (errors) => {
+    // debugger
+    return {
+        type: RECEIVE_REVIEW_ERRORS,
+        errors
+    }
+}
+
 
 
 
@@ -38,16 +45,17 @@ export const fetchReviews = (businessId) => (dispatch) => (
         .then(reviews => dispatch(receiveReviews(reviews)))
 )
 
-export const createReview = (businessId, review) => (dispatch) => (
-    ReviewAPIUtil.createReview(businessId, review)
+export const createReview = (businessId, review) => (dispatch) => {
+    // debugger
+    return (ReviewAPIUtil.createReview(businessId, review)
         .then(payload => dispatch(receiveReview(payload)),
-            err => dispatch(receiveReviewErrors(err))
-))
+            err => (dispatch(receiveReviewErrors(err.responseJSON)))
+))}
 
 export const updateReview = (businessId, review) => (dispatch) => (
     ReviewAPIUtil.updateReview(businessId, review)
         .then(payload => dispatch(receiveReview(payload)),
-            err => dispatch(receiveReviewErrors(err))
+            err => dispatch(receiveReviewErrors(err.responseJSON))
 ))
 
 export const deleteReview = (businessId, reviewId) => (dispatch) => (
