@@ -35,13 +35,6 @@
     }
 }
 
-#location-and-schedule-header{
-    display: block;
-    padding-bottom: 15px;
-    font-size: 26px;
-    font-weight: bold;
-}
-
 .schedule{
     display: flex;
     justify-content: space-between;
@@ -52,3 +45,26 @@
     }
 }
 
+// AMENITIES & MORE
+
+.amenity-list{
+    column-count: 2;
+}
+
+.business-field-header{
+    display: block;
+    padding-bottom: 15px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.amenity-item{
+    list-style: none; 
+    width: 200px;
+    padding: 10px;
+
+    > div {
+        display: inline;
+        padding-right: 20px;
+    }
+}

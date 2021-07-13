@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../../nav_bar/nav_bar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faStarHalfAlt, faPhone, faExternalLinkAlt, faDirections } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faStarHalfAlt, faPhone, faExternalLinkAlt, faDirections, faCheck } from '@fortawesome/free-solid-svg-icons'
 import * as RegFontAwesome from '@fortawesome/free-regular-svg-icons'
 import ReviewIndexContainer from '../../review/review_index/review_index_container';
 
@@ -60,7 +60,7 @@ class BusinessShow extends React.Component{
         } else {
             // debugger
             const rating = this.avgRating()
-            const {id, name, address, city, state, zipcode, phone, website, mon_fri, sat_sun, categories, photoUrls, reviews} = this.props.business
+            const {id, name, address, city, state, zipcode, phone, website, mon_fri, sat_sun, categories, photoUrls, reviews, amenities} = this.props.business
             return(
                 <div>
                     {/* --------------NAV BAR---------------- */}
@@ -98,45 +98,58 @@ class BusinessShow extends React.Component{
                                 <div className='body-container-left'>
                                     <Link to={`/businesses/${id}/reviews/new`}><button className="business-show-write-review"><FontAwesomeIcon icon={RegFontAwesome.faStar} color='white'/> Write a Review</button></Link>
                                 
-                                <div className='location-and-schedule-container'>
-                                    {/* Header title */}
-                                    <span id="location-and-schedule-header">Location & Hours</span>
+                                    <div className='location-and-schedule-container'>
+                                        {/* Header title */}
+                                        <span className="business-field-header">Location & Hours</span>
 
-                                    <div className='location-and-schedule'>
-                                        {/* Location */}
-                                        <div className='location-container'>
-                                            <div className ='business-location-container'>
-                                                <div>{address} {city}, {state} {zipcode}</div>
+                                        <div className='location-and-schedule'>
+                                            {/* Location */}
+                                            <div className='location-container'>
+                                                <div className ='business-location-container'>
+                                                    <div>{address} {city}, {state} {zipcode}</div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        {/* Schedule */}
-                                        <div className='schedule-container'>
-                                            <div className="business-schedule-container">
-                                                <div className="schedule">
-                                                    <div className="schedule-day">Monday: </div> 
-                                                    <div className='schedule-time'>{mon_fri}</div></div>
-                                                <div className="schedule">
-                                                    <div className="schedule-day">Tuesday: </div> 
-                                                    <div className='schedule-time'>{mon_fri}</div></div>
-                                                <div className="schedule">
-                                                    <div className="schedule-day">Wednesday: </div> 
-                                                    <div className='schedule-time'>{mon_fri}</div></div>
-                                                <div className="schedule">
-                                                    <div className="schedule-day">Thursday: </div> 
-                                                    <div className='schedule-time'>{mon_fri}</div></div>
-                                                <div className="schedule">
-                                                    <div className="schedule-day">Friday: </div> 
-                                                    <div className='schedule-time'>{mon_fri}</div></div>
-                                                <div className="schedule">
-                                                    <div className="schedule-day">Saturday: </div> 
-                                                    <div className='schedule-time'>{sat_sun}</div></div>
-                                                <div className="schedule">
-                                                    <div className="schedule-day">Sunday: </div> 
-                                                    <div className='schedule-time'>{sat_sun}</div></div>            
+                                            {/* Schedule */}
+                                            <div className='schedule-container'>
+                                                <div className="business-schedule-container">
+                                                    <div className="schedule">
+                                                        <div className="schedule-day">Monday: </div> 
+                                                        <div className='schedule-time'>{mon_fri}</div></div>
+                                                    <div className="schedule">
+                                                        <div className="schedule-day">Tuesday: </div> 
+                                                        <div className='schedule-time'>{mon_fri}</div></div>
+                                                    <div className="schedule">
+                                                        <div className="schedule-day">Wednesday: </div> 
+                                                        <div className='schedule-time'>{mon_fri}</div></div>
+                                                    <div className="schedule">
+                                                        <div className="schedule-day">Thursday: </div> 
+                                                        <div className='schedule-time'>{mon_fri}</div></div>
+                                                    <div className="schedule">
+                                                        <div className="schedule-day">Friday: </div> 
+                                                        <div className='schedule-time'>{mon_fri}</div></div>
+                                                    <div className="schedule">
+                                                        <div className="schedule-day">Saturday: </div> 
+                                                        <div className='schedule-time'>{sat_sun}</div></div>
+                                                    <div className="schedule">
+                                                        <div className="schedule-day">Sunday: </div> 
+                                                        <div className='schedule-time'>{sat_sun}</div></div>            
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                    
+                                    <div className='business-amenities'>
+                                        <span className="business-field-header">Amenities & More</span>
+                                        <ul className='amenity-list'>
+                                            {amenities.map((amenity, i) => (
+                                                <li className="amenity-item" key={i}>
+                                                    <div className='amenity-check'><FontAwesomeIcon icon={faCheck}/></div>
+                                                    <div className='amenity-name'>{amenity.amenity}</div>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        
+                                    </div>
 
                                     <div><ReviewIndexContainer currentUser={this.props.currentUser} star={this.star} users={this.props.users} business={this.props.business}/></div>
                                 </div>   

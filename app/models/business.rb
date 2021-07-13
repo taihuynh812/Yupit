@@ -17,4 +17,12 @@ class Business < ApplicationRecord
         through: :business_categories,
         source: :category
 
+    has_many :business_amenities,
+        class_name: :BusinessAmenity,
+        foreign_key: :business_id
+
+    has_many :amenities,
+        through: :business_amenities,
+        source: :amenity
+
 end

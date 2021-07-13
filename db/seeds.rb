@@ -9,6 +9,12 @@ Business.destroy_all
 Business.reset_pk_sequence
 BusinessCategory.destroy_all
 BusinessCategory.reset_pk_sequence
+Category.destroy_all
+Category.reset_pk_sequence
+BusinessAmenity.destroy_all
+BusinessAmenity.reset_pk_sequence
+Amenity.destroy_all
+Amenity.reset_pk_sequence
 
 
 demo = User.create!(firstname: "Demo",
@@ -46,7 +52,7 @@ business1 = Business.create!(name: 'Peaches HotHouse',
                         zipcode: '11216',
                         phone: '718-563-5822',
                         lat: 40.68336103873503, 
-                        long: -73.94371176551697,
+                        lng: -73.94371176551697,
                         website: 'peacheshothouse.com',
                         mon_fri: "10AM - 10PM",
                         sat_sun: "10AM - 1AM"
@@ -88,7 +94,7 @@ business2 = Business.create!(name: 'Barn Joo 35',
                         zipcode: '10001',
                         phone: '212-564-4430',
                         lat: 40.74999331244202,
-                        long: -73.98576428465678,
+                        lng: -73.98576428465678,
                         website: 'barnjoo.com',
                         mon_fri: "11AM - 11PM",
                         sat_sun: "11AM - 3AM",
@@ -135,7 +141,7 @@ business3 = Business.create!(name: 'Her Name Is Han',
                         zipcode: '10016',
                         phone: '718-563-5822',
                         lat: 40.746395887645136,
-                        long: -73.98468649977998,
+                        lng: -73.98468649977998,
                         website: 'hernameishan.com',
                         mon_fri: "10AM - 11PM",
                         sat_sun: "11AM - 12AM",
@@ -177,7 +183,7 @@ business4 = Business.create!(name: 'The Cabin NYC',
                         zipcode: '10009',
                         phone: '212-777-0454',
                         lat: 40.72458465097402, 
-                        long: -73.98389413068803,
+                        lng: -73.98389413068803,
                         website: 'thecabinnyc.com',
                         mon_fri: "12PM - 12AM",
                         sat_sun: "11AM - 2AM",
@@ -236,3 +242,27 @@ b_c7 = BusinessCategory.create!(category_id: cat2.id,
                                 business_id: business4.id)
 b_c8 = BusinessCategory.create!(category_id: cat5.id,
                                 business_id: business4.id)
+
+amen1 = Amenity.create!(amenity: 'Delivery')
+amen2 = Amenity.create!(amenity: 'Takeout')
+amen3 = Amenity.create!(amenity: 'Indoor Dining')
+amen4 = Amenity.create!(amenity: 'Outdoor Seating')
+
+b1_a1 = BusinessAmenity.create!(business_id: business1.id, amenity_id: amen1.id)
+b1_a2 = BusinessAmenity.create!(business_id: business1.id, amenity_id: amen2.id)
+b1_a3 = BusinessAmenity.create!(business_id: business1.id, amenity_id: amen3.id)
+
+b2_a1 = BusinessAmenity.create!(business_id: business2.id, amenity_id: amen1.id)
+b2_a2 = BusinessAmenity.create!(business_id: business2.id, amenity_id: amen2.id)
+b2_a3 = BusinessAmenity.create!(business_id: business2.id, amenity_id: amen3.id)
+b2_a4 = BusinessAmenity.create!(business_id: business2.id, amenity_id: amen4.id)
+
+b3_a1 = BusinessAmenity.create!(business_id: business3.id, amenity_id: amen1.id)
+b3_a2 = BusinessAmenity.create!(business_id: business3.id, amenity_id: amen2.id)
+b3_a3 = BusinessAmenity.create!(business_id: business3.id, amenity_id: amen3.id)
+b3_a4 = BusinessAmenity.create!(business_id: business3.id, amenity_id: amen4.id)
+
+b4_a1 = BusinessAmenity.create!(business_id: business4.id, amenity_id: amen1.id)
+b4_a2 = BusinessAmenity.create!(business_id: business4.id, amenity_id: amen2.id)
+b4_a3 = BusinessAmenity.create!(business_id: business4.id, amenity_id: amen3.id)
+b4_a4 = BusinessAmenity.create!(business_id: business4.id, amenity_id: amen4.id)
