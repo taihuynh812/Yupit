@@ -1,5 +1,5 @@
 class Business < ApplicationRecord
-    validates :name, :address, :city, :state, :zipcode, :phone, :lat, :long, presence:true
+    validates :name, :address, :city, :state, :zipcode, :phone, :lat, :lng, presence:true
 
     has_many :reviews,
         class_name: :Review,
