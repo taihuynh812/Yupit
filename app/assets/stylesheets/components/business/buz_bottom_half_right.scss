@@ -7,6 +7,10 @@
 }
 
 .business-contact-container{
+    position: -webkit-sticky;
+    position: sticky;
+    margin-top: -20px;
+    top: 20px;
     border: 1px rgb(165, 161, 161) solid;
     border-radius: 3px; 
 }
