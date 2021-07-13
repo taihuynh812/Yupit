@@ -28,12 +28,17 @@ class ReviewSubmit extends React.Component{
     }
 
     hover(e){
-        const ratingText = document.getElementById('rating-text')
-        if (e === 1) ratingText.innerText = 'Not good'
-        else if (e === 2) ratingText.innerText = 'Could\'ve been better'
-        else if (e === 3) ratingText.innerText = 'OK'
-        else if (e === 4) ratingText.innerText = 'Good'
-        else if (e === 5) ratingText.innerText = 'Great'
+        if (this.state.rating === ""){
+            const ratingText = document.getElementById('rating-text')
+            if (e === 1) ratingText.innerText = 'Not good'
+            else if (e === 2) ratingText.innerText = 'Could\'ve been better'
+            else if (e === 3) ratingText.innerText = 'OK'
+            else if (e === 4) ratingText.innerText = 'Good'
+            else if (e === 5) ratingText.innerText = 'Great'
+            else {
+                ratingText.innerText = "Select your rating"
+            }
+        }
     }
 
     update(field){
@@ -55,17 +60,25 @@ class ReviewSubmit extends React.Component{
         const {business_id} = this.state
         e.preventDefault()
         this.props.createReview(business_id, this.state)
-            // .then(() => this.props.history.push(`/businesses/${business_id}`))
+            .then(() => this.props.history.push(`/businesses/${business_id}`))
     }
 
     showErrors(){
-        return(
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={i}>{error}</li>
-                ))}
-            </ul>
-        )
+        if (this.props.errors.length !== 0){
+            if (this.props.errors[0].includes("Rating")){
+                return  (
+                    <div className="review-submit-errors">
+                        To submit your review, please select a star rating for this business.
+                    </div>
+                )
+            } else {
+                return (
+                    <div className="review-submit-errors">
+                        To submit your review, please explain your rating to others.
+                    </div>
+                )
+            }
+        }
     }
 
     render(){
@@ -82,28 +95,39 @@ class ReviewSubmit extends React.Component{
                             <div className='nav-bar-session'><NavbarGreetingContainer/></div>
                         </div>
                     </div>
+                    {/* BELOW NAV-BAR */}
                     <div className='review-form-body-container'>
-                        <div className='review-form-header'>Write your review for {this.props.business.name}</div>
-                        <form className='review-submit-form' onSubmit={this.submit}>
-                            <div className='review-submit-rating-container'>
-                                <Rating 
-                                    initialRating= {this.state.rating}
-                                    className= "review-submit-rating"
-                                    emptySymbol= {<FontAwesomeIcon icon={RegFontAwesome.faStar} color='red' />}
-                                    fullSymbol= {<FontAwesomeIcon icon={faStar} color='red'/>}
-                                    onHover= {this.hover}
-                                    onClick= {this.updateRating}
-                                />
-                                <p id="rating-text">Select your rating</p>
-                                <textarea 
-                                    className="review-submit-description" 
-                                    value={this.state.description} 
-                                    onChange={this.update('description')}>
-                                </textarea>
-                                {this.showErrors()}
+                        <div className='review-form-body-container-inner'>
+
+                            {/* REVIEW-FORM-HEADER */}
+                            <div className='review-form-header'>
+                                <div className='review-business-name'>{this.props.business.name}</div>
+                                <div className='review-guidelines'>Read our review guidelines</div>
                             </div>
-                            <button type='submit' className="Review-submit-button">Post Review</button>
-                        </form>
+                            
+                            {/* REVIEW FORM */}
+                            <form className='review-submit-form' onSubmit={this.submit}>
+                                <div className='review-submit-rating-container'>
+                                    <Rating 
+                                        initialRating= {this.state.rating}
+                                        className= "review-submit-stars"
+                                        emptySymbol= {<FontAwesomeIcon icon={RegFontAwesome.faStar} color='red' />}
+                                        fullSymbol= {<FontAwesomeIcon icon={faStar} color='red'/>}
+                                        onHover= {this.hover}
+                                        onClick= {this.updateRating}
+                                    />
+                                    <p id="rating-text">Select your rating</p>
+                                    <textarea 
+                                        className="review-submit-description" 
+                                        value={this.state.description} 
+                                        onChange={this.update('description')}>
+                                    </textarea>
+                                    <div className='errors-container'>{this.showErrors()}</div>
+                                </div>
+                                <button type='submit' className="review-submit-button">Post Review</button>
+                            </form>
+
+                        </div>
                     </div>
                 </div>
                 

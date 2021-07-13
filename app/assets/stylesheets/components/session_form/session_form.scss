@@ -1,14 +1,3 @@
-@font-face {
-    font-family: 'porkys';
-    src: url(../../base/fonts/Porkys/PORKYS_.TTF);
-}
-
-@font-face {
-    font-family: 'Androgyne-Medium';
-    src: url(../../base/fonts/Androgyne-Medium/Androgyne_TB.otf);
-}   
-
-
 .session-form-header{
     display: flex;
     justify-content: center;
@@ -20,7 +9,7 @@
 .header-title{
     font-size: 36px;
     color: red;
-    font-family: "porkys";
+    font-family: 'Lemon', cursive;
     font-weight: bolder;
     text-decoration: none;
 }
@@ -54,8 +43,9 @@
     justify-content: center;
     padding: 10px;
     color: red;
-    font-family: Androgyne-Medium;
+    font-family: 'Eczar', serif;
     font-size: 18px;
+    font-weight: bold;
 }
 
 .session-form-field{
@@ -89,7 +79,7 @@
     background: rgb(25, 117, 222);
     color: white;
     border: 1px solid rgb(25, 117, 222);
-    border-radius: 1px;
+    border-radius: 5px;
     width: 100%;
     height: 50px;
     cursor: pointer;
