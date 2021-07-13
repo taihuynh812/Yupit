@@ -24,13 +24,14 @@ class ReviewUpdate extends React.Component{
 
     componentDidMount(){
         this.props.fetchBusiness(this.props.match.params.businessId)
-            .then(() => this.setState( {business_id: this.props.business.id} ))
-                .then(() => this.props.fetchReviews(this.props.business.id))
-                    .then(() => this.setState({
-                        rating: this.props.review.rating,
-                        description: this.props.review.description,
-                        user_id: this.props.user_id,
-                        id: this.props.review.id
+        this.props.fetchReviews(this.props.match.params.businessId)
+            .then(() => 
+                this.setState({
+                    rating: this.props.review.rating,
+                    description: this.props.review.description,
+                    user_id: this.props.user_id,
+                    id: this.props.review.id,
+                    business_id: this.props.review.business_id
             }))
     }
 
@@ -63,7 +64,6 @@ class ReviewUpdate extends React.Component{
     }
 
     submit(e){
-        // debugger
         const {business_id} = this.state
         e.preventDefault()
         this.props.updateReview(business_id, this.state)
@@ -81,7 +81,7 @@ class ReviewUpdate extends React.Component{
     }
 
     render(){
-        if (!this.props.business){
+        if (!this.props.business || !this.props.review){
             return(
                 <div>Loading....</div>
             )
@@ -115,15 +115,15 @@ class ReviewUpdate extends React.Component{
                                         onHover= {this.hover}
                                         onClick= {this.updateRating}
                                     />
-                                    <p id="rating-text">{this.updateRating(this.state.rating)}</p>
+                                    <p id="rating-text"></p>
                                     <textarea 
                                         className="review-submit-description" 
                                         value={this.state.description} 
                                         onChange={this.update('description')}>
                                     </textarea>
-                                    <div className='errors-container'>{this.showErrors()}</div>
+                                    {this.showErrors()}
                                 </div>
-                                <button type='submit' className="review-submit-button">Post Review</button>
+                                <button type='submit' className="review-submit-button">Update Review</button>
                             </form>
 
                         </div>

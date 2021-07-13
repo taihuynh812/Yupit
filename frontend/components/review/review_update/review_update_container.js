@@ -14,6 +14,7 @@ const mSTP = (state, ownProps) => ({
 const mDTP = (dispatch) => ({
     fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
     updateReview: (businessId, review) => dispatch(updateReview(businessId, review)),
+    fetchReview: (businessId, reviewId) => dispatch(fetchReviews(businessId, reviewId)),
     fetchReviews: (businessId) => dispatch(fetchReviews(businessId)),
     receiveReviewErrors: errs => dispatch(receiveReviewErrors(errs))
 })
