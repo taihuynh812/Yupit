@@ -70,14 +70,29 @@ class ReviewUpdate extends React.Component{
             .then(() => this.props.history.push(`/businesses/${business_id}`))
     }
 
-    showErrors(){
+    showRating(){
+        let innerText
+        let currRating = this.state.rating
+        if (currRating === 1) innerText = 'Not good'
+        else if (currRating === 2) innerText = 'Could\'ve been better'
+        else if (currRating === 3) innerText = 'OK'
+        else if (currRating === 4) innerText = 'Good'
+        else if (currRating === 5) innerText = 'Great'
+
         return(
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={i}>{error}</li>
-                ))}
-            </ul>
+            innerText
         )
+    }
+
+    showErrors(){
+        if (this.props.errors.length !== 0){
+            debugger
+            return  (
+                <div className="review-submit-errors">
+                    Unable to save your changes, description can't be black. Please try again
+                </div>
+            )
+        } 
     }
 
     render(){
@@ -115,7 +130,7 @@ class ReviewUpdate extends React.Component{
                                         onHover= {this.hover}
                                         onClick= {this.updateRating}
                                     />
-                                    <p id="rating-text"></p>
+                                    <p id="rating-text">{this.showRating()}</p>
                                     <textarea 
                                         className="review-submit-description" 
                                         value={this.state.description} 
