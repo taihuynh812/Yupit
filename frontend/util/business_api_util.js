@@ -15,3 +15,11 @@ export const fetchBusiness = (businessId) => (
         error: (err) => console.log(err)
     })
 )
+
+export const searchBusinesses = (search) => (
+    $.ajax({
+        method: 'GET',
+        url: 'api/businesses/search',
+        data: {search}
+    })
+)

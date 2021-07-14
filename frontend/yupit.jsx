@@ -6,6 +6,7 @@ import { login, logout, signup } from "./actions/session"
 import {fetchBusinesses} from './actions/business'
 import {fetchUsers} from './actions/user'
 import {fetchReviews, createReview} from './actions/review'
+import {searchBusinesses} from './actions/search'
 
 
 
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchUsers = fetchUsers
     window.fetchReviews = fetchReviews
     window.createReview = createReview
+    window.searchBusinesses = searchBusinesses
 
     ReactDOM.render(<Root store={store}/>, root)
 })
