@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt, faPhone, faExternalLinkAlt, faDirections, faCheck } from '@fortawesome/free-solid-svg-icons'
 import * as RegFontAwesome from '@fortawesome/free-regular-svg-icons'
 import ReviewIndexContainer from '../../review/review_index/review_index_container';
+import BusinessMap from '../../map/business_map';
 
 class BusinessShow extends React.Component{
     constructor(props){
@@ -105,6 +106,7 @@ class BusinessShow extends React.Component{
                                         <div className='location-and-schedule'>
                                             {/* Location */}
                                             <div className='location-container'>
+                                                <div><BusinessMap businesses={[this.props.business]}/></div>
                                                 <div className ='business-location-container'>
                                                     <div>{address} {city}, {state} {zipcode}</div>
                                                 </div>

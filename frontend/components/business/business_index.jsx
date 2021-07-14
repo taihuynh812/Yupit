@@ -1,6 +1,6 @@
 import React from 'react'
 import BusinessIndexItem from './business_index_item'
-
+import BusinessMap from '../map/business_map'
 
 class BusinessIndex extends React.Component{
     
@@ -20,6 +20,7 @@ class BusinessIndex extends React.Component{
                         </div>
                     ))}
                 </div>
+                <BusinessMap businesses={this.props.businesses}/> 
             </div>
         )
     }

@@ -32,13 +32,25 @@
     min-width: 100%;
     > div {
         display: table-cell;
+        vertical-align: middle;
+
+        > div {
+            padding-bottom: 20px;
+        }
     }
+}
+
+.business-location-container{
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .schedule{
     display: flex;
     justify-content: space-between;
     width: 250px;
+    padding: 10px;
     > div {
         display: inline-block;
         font-weight: bold;
