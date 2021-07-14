@@ -9,6 +9,7 @@ export default class MarkerManager {
     updateMarkers(businesses){
         businesses.forEach(business => {
             const myLatLng = {lat: business.lat, lng: business.lng}
+            this.markers[business.id] = 
             this.createMarkerFromBusiness(myLatLng, this.map)
         })
         

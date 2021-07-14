@@ -9,20 +9,27 @@ class BusinessIndex extends React.Component{
     }
 
     render(){
-        return(
-            <div>
-                <div className='business-index-list-container'>
-                    {this.props.businesses.map((business, i) => (
-                        <div className='business-index-item' key={i}>
-                            <BusinessIndexItem
-                                business={business}
-                            />
-                        </div>
-                    ))}
+        debugger
+        if (this.props.businesses.length < 1){
+            return(
+                <div>Loading...</div>
+            )
+        } else {
+            return(
+                <div>
+                    <div className='business-index-list-container'>
+                        {this.props.businesses.map((business, i) => (
+                            <div className='business-index-item' key={i}>
+                                <BusinessIndexItem
+                                    business={business}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                    <BusinessMap businesses={this.props.businesses}/> 
                 </div>
-                <BusinessMap businesses={this.props.businesses}/> 
-            </div>
-        )
+            )
+        }
     }
 }
 
