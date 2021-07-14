@@ -86,7 +86,7 @@ class ReviewUpdate extends React.Component{
 
     showErrors(){
         if (this.props.errors.length !== 0){
-            debugger
+            // debugger
             return  (
                 <div className="review-submit-errors">
                     Unable to save your changes, description can't be black. Please try again

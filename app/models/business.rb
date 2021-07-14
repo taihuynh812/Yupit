@@ -25,4 +25,5 @@ class Business < ApplicationRecord
         through: :business_amenities,
         source: :amenity
 
+
 end

@@ -139,7 +139,7 @@ class BusinessShow extends React.Component{
                                             </div>
                                         </div>
                                     </div>
-                                    
+                                    {/* Amenities */}
                                     <div className='business-amenities'>
                                         <span className="business-field-header">Amenities & More</span>
                                         <ul className='amenity-list'>
@@ -152,7 +152,7 @@ class BusinessShow extends React.Component{
                                         </ul>
                                         
                                     </div>
-
+                                    {/* Reviews */}
                                     <div><ReviewIndexContainer currentUser={this.props.currentUser} star={this.star} users={this.props.users} business={this.props.business}/></div>
                                 </div>   
                                 {/* --------------RIGHT SIDE---------------- */}

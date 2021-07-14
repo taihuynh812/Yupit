@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Search from "./search";
+import SearchBar from "./search_bar";
 
 
 
@@ -11,4 +11,4 @@ const mDTP = (dispatch) => ({
 
 })
 
-export default connect(mSTP, mDTP)(Search)
+export default connect(mSTP, mDTP)(SearchBar)

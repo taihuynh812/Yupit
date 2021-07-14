@@ -9,7 +9,7 @@ class BusinessIndex extends React.Component{
     }
 
     render(){
-        debugger
+        // debugger
         if (this.props.businesses.length < 1){
             return(
                 <div>Loading...</div>

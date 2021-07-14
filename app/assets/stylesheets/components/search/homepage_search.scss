@@ -1,15 +1,17 @@
-.searchbar-container{
+.homepage-searchbar{
     min-width: 600px;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
 }
+.homepage-searchbar .searchbar-container{ 
+    border: 1px solid transparent; 
+    margin-right: 25px;
+}
 
-.searchbar-form{
+.homepage-searchbar .searchbar-form{
     display: table;
-    height: 36px;
+    height: 40px;
     width: 100%;
-    box-shadow: 0 2px 18px rgba(0, 0, 0, 15%);
-    border-radius: 4px;
     > div{
         display: table-cell;
         height: 100%;
@@ -17,8 +19,8 @@
 }
 
 
-.search-inputs{
-    width: 90%;
+.homepage-searchbar .search-inputs{
+    width: 92%;
     
     > input{
         box-sizing: border-box;
@@ -29,8 +31,14 @@
     }
 }
 
-.search-submit{
-    width: 10%;
+#keyword-search{
+    border-right: 2px solid lightgray;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.homepage-searchbar .search-submit{
+    width: 8%;
 
     > button{
         box-sizing: border-box;
@@ -40,7 +48,6 @@
         border-style: none;
         border-top-right-radius: 4px;
         border-bottom-right-radius: 4px;
-        color: white;
+        color: white
     }
 }
-
