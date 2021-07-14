@@ -45,6 +45,13 @@ u3 = User.create!(firstname: "Warren",
                     password: 'warren123',
                     zipcode: 11220)
 
+u4 = User.create!(firstname: 'Jonathan',
+                    lastname: 'XP',
+                    username: 'jonathanexp',
+                    email: "jonathanexp@hotmail.com",
+                    password: 'jon123',
+                    zipcode: 12255)
+
 business1 = Business.create!(name: 'Peaches HotHouse',
                         address: '415 Tompkins Ave',
                         city: 'Brooklyn',
@@ -57,8 +64,6 @@ business1 = Business.create!(name: 'Peaches HotHouse',
                         mon_fri: "10AM - 10PM",
                         sat_sun: "10AM - 1AM"
 )
-
-
 
 business1r1 = Review.create!(rating: 5,
                         description: "Peaches was great! 10/10",
@@ -75,6 +80,12 @@ business1r2 = Review.create!(rating: 4,
 business1r3 = Review.create!(rating: 4,
                         description: "Would come back again!",
                         user_id: u3.id,
+                        business_id: business1.id                       
+)
+
+business1r4 = Review.create!(rating: 2,
+                        description: "Peaches were too sweet and the air conditioner was not working. It really is a hot house",
+                        user_id: u4.id,
                         business_id: business1.id                       
 )
 
@@ -163,6 +174,12 @@ business3r2 = Review.create!(rating: 5,
 business3r3 = Review.create!(rating: 5,
                         description: "The most incredible Korean food. I still dream about the dinner I had there. Come to Boston!",
                         user_id: demo.id,
+                        business_id: business3.id                       
+)
+
+business3r4 = Review.create!(rating: 5,
+                        description: "Food was immaculate. Would eat more if my stomach was bigger.",
+                        user_id: u4.id,
                         business_id: business3.id                       
 )
 
