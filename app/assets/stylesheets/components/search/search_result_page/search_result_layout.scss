@@ -6,22 +6,32 @@
 .search-results-wrapper{
     padding-top: 30px;
     min-width: 1200px;
-    border: 2px solid black;
     margin: 0 auto;
     display: table;
 
     > div {
         display: table-cell;
         min-width: 700px;
-        border: 1px solid blue;
         vertical-align: top;
     }
+}
+
+.search-results-list-header{
+    padding-left: 30px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .search-results-container{
     
 }
 
-.search-results-map #search-results-map{
-    
+#search-results-map #map-container{
+    width: 700px;
+    height: 900px;
+}
+
+#search-results-map{
+    position: -webkit-sticky;
+    position: sticky;
 }

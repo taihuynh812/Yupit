@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faStarHalfAlt, faCheck } from '@fortawesome/free-solid-svg-icons'
 import * as RegFontAwesome from '@fortawesome/free-regular-svg-icons'
 
 class BusinessListItem extends React.Component{
@@ -44,7 +44,7 @@ class BusinessListItem extends React.Component{
 
     render(){
         const rating = this.avgRating()
-        const {id, categories, name, reviews, photoUrls} = this.props.business
+        const {id, categories, name, reviews, photoUrls, amenities} = this.props.business
         // debugger
         return(
             <div id="all-search-results">
@@ -57,15 +57,30 @@ class BusinessListItem extends React.Component{
 
                         <div className="business-search-descript">
                             <div className="business-search-name">{this.props.order + 1}. {name}</div>
+                            
                             <div className='business-search-rating'>{this.star(rating)} {reviews.length} reviews</div>
+                            
                             {categories.map((category, i) => (
                                 <div className='business-search-categories' key={i}>
                                     {category.category} 
-                                    {i < categories.length - 1 ? "," : ""}
                                 </div>
                             ))}
                             
-                            <div className='business-search-review'>{reviews[0].description}</div>
+                            <div className='business-search-review-container'>
+                                <div className='business-search-review-icon'><FontAwesomeIcon icon={RegFontAwesome.faComment}/></div>
+                                <div className='business-search-review'>{reviews[0].description}</div>
+                            </div>
+
+                            <div className='business-search-amenities'>
+                                <ul className='business-search-amenity-list'>
+                                    {amenities.slice(0,5).map((amenity, i) => (
+                                        <li className="business-search-amenity-item" key={i}>
+                                            <div className='business-search-amenity-check'><FontAwesomeIcon icon={faCheck}/></div>
+                                            <div className='business-search-amenity-name'>{amenity.amenity}</div>
+                                        </li>
+                                    ))}
+                                </ul>     
+                            </div>
                         </div>
 
                     </div>

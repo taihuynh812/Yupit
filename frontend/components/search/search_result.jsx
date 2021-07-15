@@ -21,10 +21,10 @@ class SearchResult extends React.Component{
                 </div>
             )
         } else {
-            debugger
             return(
                 <div className='search-result-page'>
                     <div className='business-nav-bar-container'><NavBar/></div>
+
                     <div className='search-results-wrapper'>
                         <div className='search-results-container'>
                             <div className='search-results-list-header'>All Results for "{this.props.match.params.keyword}"</div>

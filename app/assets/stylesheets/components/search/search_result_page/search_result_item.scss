@@ -2,12 +2,18 @@
     text-decoration: none;
     color: black
 }
+
+#all-search-results:hover{
+    box-shadow: rgb(189, 17, 17);
+}
+
 .business-search-list{
     display: flex;
     justify-content: space-between;
     padding: 20px;
     margin: 30px;
     border: 1px lightgray solid;
+    border-radius: 8px;
     max-width: 800px;
     
     > div {
@@ -16,18 +22,79 @@
     }
 }
 
+.business-search-list:hover{
+    box-shadow: 0 2px 18px rgba(34, 34, 34, 0.1);
+}
+
 .business-search-picture{
     height: 200px;
-    width: 200px;
+    width: 220px;
+    border-radius: 8px;
 }
 
 .business-search-descript{
-    border: 1px green solid;
     width: 70%;
-    padding-right: 20px;
     
+    > div{
+        padding-bottom: 15px;
+    }
     > .business-search-name{
         font-size: 24px;
         font-weight: bold;
     }
+
+    > .business-search-categories{
+        display: inline-block;
+        padding: 1px 2px;
+        margin-left: 5px;
+        background-color: rgb(233, 233, 233);
+        border-radius: 3px;
+    }
+}
+
+//REVIEWS
+.business-search-review-container{
+    margin: 5px 0px;
+    padding: 5px 5px;
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px rgb(220, 220, 220) solid;
+}
+.business-search-review{
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px; /* fallback */
+    max-height: 32px; /* fallback */
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    padding-left: 5px;
+    color:rgb(99, 99, 99);
+    font-size: 14px;
+}
+
+
+// AMENITIES
+.business-search-amenity-list{
+    white-space: nowrap;
+    padding-top: 15px;
+
+    > .business-search-amenity-item{
+        display: inline-block;
+        padding: 5px;
+        > div {  
+            display: inline;
+            padding: 2px;
+        }
+    }
+}
+
+.business-search-amenity-check{
+    color: rgb(55, 238, 83);
+    font-size: 10px;
+}
+
+.business-search-amenity-name{
+    font-size: 14px;
 }

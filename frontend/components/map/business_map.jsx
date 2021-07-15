@@ -7,7 +7,7 @@ class BusinessMap extends React.Component{
         // debugger
         const mapOptions = {
             center: {lat: this.props.businesses[0].lat, lng: this.props.businesses[0].lng},
-            zoom: 11
+            zoom: 12
         }
 
         this.map = new google.maps.Map(this.mapNode, mapOptions)
@@ -19,7 +19,7 @@ class BusinessMap extends React.Component{
         // debugger
         const mapOptions = {
             center: {lat: this.props.businesses[0].lat, lng: this.props.businesses[0].lng},
-            zoom: 11
+            zoom: 12
         }
 
         this.map = new google.maps.Map(this.mapNode, mapOptions)
