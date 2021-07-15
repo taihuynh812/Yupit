@@ -8,7 +8,6 @@ export const receiveSearchResults = (searchResults) => ({
 })
 
 export const searchBusinesses = search => {
-    debugger
     return dispatch => {
         return (
             BusinessAPIUtil.searchBusinesses(search)

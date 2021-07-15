@@ -1,11 +1,12 @@
 import React from 'react'
-import BusinessIndexItem from './business_index_item'
-import BusinessMap from '../map/business_map'
+import BusinessIndexItem from '../business/business_index_item'
+import NavBar from '../nav_bar/nav_bar'
 
-class BusinessIndex extends React.Component{
-    
-    componentDidMount(){
-        this.props.fetchBusinesses()
+class SearchResult extends React.Component{
+
+    constructor(props){
+        super(props)
+        this.props.searchBusinesses(this.props.match.params.keyword)
     }
 
     render(){
@@ -16,9 +17,10 @@ class BusinessIndex extends React.Component{
         } else {
             return(
                 <div>
-                    <div className='business-index-list-container'>
+                    <div className='business-nav-bar-container'><NavBar/></div>
+                    <div className='search-results-list'>
                         {this.props.businesses.map((business, i) => (
-                            <div className='business-index-item' key={i}>
+                            <div className='search-result-business-item' key={i}>
                                 <BusinessIndexItem
                                     business={business}
                                 />
@@ -31,4 +33,4 @@ class BusinessIndex extends React.Component{
     }
 }
 
-export default BusinessIndex
+export default SearchResult

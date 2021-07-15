@@ -53,7 +53,6 @@ class BusinessShow extends React.Component{
     };
 
     render(){
-        // debugger
         if (!this.props.business || !this.props.users){
             return (
                 <div>Loading...</div>

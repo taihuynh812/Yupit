@@ -1,14 +1,15 @@
 import { connect } from "react-redux";
-import SearchBar from "./search_bar";
-import { searchBusinesses } from "../../actions/search";
+import SearchResult from "./search_result";
+
 
 
 const mSTP = (state) => ({
-    search: state.entities.search
+    businesses: Object.values(state.entities.search)
 })
 
 const mDTP = (dispatch) => ({
     searchBusinesses: (search) => dispatch(searchBusinesses(search))
 })
 
-export default connect(mSTP, mDTP)(SearchBar)
+
+export default connect(mSTP, mDTP)(SearchResult)
