@@ -31,6 +31,7 @@ class SearchResult extends React.Component{
                             {this.props.businesses.map((business, i) => (
                                 <div className='search-result-business-item' key={i}>
                                     <BusinessListItem
+                                        order={i}
                                         business={business}
                                     />
                                 </div>

@@ -1,5 +1,33 @@
+#all-search-results a{
+    text-decoration: none;
+    color: black
+}
+.business-search-list{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 30px;
+    border: 1px lightgray solid;
+    max-width: 800px;
+    
+    > div {
+        height: 100%;
+        box-sizing: border-box;
+    }
+}
+
 .business-search-picture{
-    height: 220px;
-    width: 220px;
-    background-size:cover;
+    height: 200px;
+    width: 200px;
+}
+
+.business-search-descript{
+    border: 1px green solid;
+    width: 70%;
+    padding-right: 20px;
+    
+    > .business-search-name{
+        font-size: 24px;
+        font-weight: bold;
+    }
 }

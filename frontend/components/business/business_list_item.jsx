@@ -47,7 +47,7 @@ class BusinessListItem extends React.Component{
         const {id, categories, name, reviews, photoUrls} = this.props.business
         // debugger
         return(
-            <div>
+            <div id="all-search-results">
                 <Link to={`/businesses/${id}`}>
                     <div className="business-search-list">
 
@@ -56,7 +56,7 @@ class BusinessListItem extends React.Component{
                         </div>
 
                         <div className="business-search-descript">
-                            <div className="business-search-name">{name}</div>
+                            <div className="business-search-name">{this.props.order + 1}. {name}</div>
                             <div className='business-search-rating'>{this.star(rating)} {reviews.length} reviews</div>
                             {categories.map((category, i) => (
                                 <div className='business-search-categories' key={i}>
