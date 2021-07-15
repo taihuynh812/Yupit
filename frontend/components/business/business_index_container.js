@@ -7,7 +7,7 @@ import { fetchUsers } from "../../actions/user";
 const mSTP = (state) => {
     // debugger
     return {
-        businesses: Object.values(state.entities.businesses)
+        businesses: state.entities.businesses
     }
 }
 

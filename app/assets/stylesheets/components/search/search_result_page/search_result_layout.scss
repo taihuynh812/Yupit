@@ -1,0 +1,21 @@
+.search-results-wrapper{
+    min-width: 1200px;
+    border: 1px solid black;
+    margin: 0 auto;
+    display: table;
+
+    > div {
+        display: table-cell;
+        min-width: 700px;
+        border: 1px solid blue;
+        vertical-align: top;
+    }
+}
+
+.search-results-container{
+    
+}
+
+.search-results-map #search-results-map{
+    
+}

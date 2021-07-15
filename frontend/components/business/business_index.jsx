@@ -1,12 +1,16 @@
 import React from 'react'
 import BusinessIndexItem from './business_index_item'
-import BusinessMap from '../map/business_map'
 
 class BusinessIndex extends React.Component{
     
+    constructor(props){
+        super(props)
+    }
+
     componentDidMount(){
         this.props.fetchBusinesses()
     }
+
 
     render(){
         if (this.props.businesses.length < 1){
@@ -15,9 +19,10 @@ class BusinessIndex extends React.Component{
             )
         } else {
             return(
-                <div>
+                <div className='business-index-list-wrapper'>
+                    <div className='hot-new-businesses'>Hot & New Businesses</div>
                     <div className='business-index-list-container'>
-                        {this.props.businesses.map((business, i) => (
+                        {Object.values(this.props.businesses).slice(0,3).map((business, i) => (
                             <div className='business-index-item' key={i}>
                                 <BusinessIndexItem
                                     business={business}
