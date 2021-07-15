@@ -52,7 +52,7 @@ class BusinessListItem extends React.Component{
                     <div className="business-search-list">
 
                         <div className="business-search-picture-box">
-                            <img className="business-search-picture" src={photoUrls[3]} /> 
+                            <img className="business-search-picture" src={photoUrls[1]} /> 
                         </div>
 
                         <div className="business-search-descript">

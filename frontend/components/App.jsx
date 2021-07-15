@@ -15,7 +15,7 @@ const App = () => (
             <Route exact path='/' component={Homepage}/>
             <Route exact path='/businesses/:businessId' component={BusinessShowContainer}/>
             <Route path = '/search/:keyword' component={SearchResultContainer}/>
-            <Route exact path ='/search/' component={SearchResultContainer}/>
+            <Route exact path ='/search' component={SearchResultContainer}/>
             <ReviewAuthRoute exact path='/businesses/:businessId/reviews/new' component={ReviewSubmitContainer} />
             <ReviewAuthRoute exact path='/businesses/:businessId/reviews/:reviewId/update' component={ReviewUpdateContainer} />
             <AuthRoute className='nav-bar-right' path="/login" component={LoginFormContainer} />
