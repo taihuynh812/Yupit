@@ -1,39 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to [Yupit](https://yupit.herokuapp.com/#/), a full-stack clone of Yelp!
 
-Things you may want to cover:
+Yupit includes many functionality/features that are similar to Yelp, such as User Authentication, visiting Businesses pages, searching for Businesses, Businesses locations through Google Maps, Users can create, read, update and delete Reviews 
 
-* Ruby version
+The technologies that were used in Yupit are:
 
-* System dependencies
+## Frontend
+* React.js
+* Redux
+* SCSS
+* Javascript
+* Google Maps API
 
-* Configuration
+## Backend
+* Ruby on Rails
 
-* Database creation
+## Database
+* PostrgreSQL
+* AWS for photos
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-YELP MVP LIST
-
-New account creation, login, and guest/demo login
-Hosting on Heroku
-Business Page
-Search / filters
-Reviews / ratings
-Map
-A production README (NB: check out the sample production README)
-
-
-Bonus: Mark reviews funny, cool, useful etc.
-Bonus: Profile
-Bonus: Friends
+## Deployment
+* Heroku
