@@ -15,7 +15,8 @@ BusinessAmenity.destroy_all
 BusinessAmenity.reset_pk_sequence
 Amenity.destroy_all
 Amenity.reset_pk_sequence
-
+ActiveRecord::Base.connection.reset_pk_sequence!('active_storage_blobs')
+ActiveRecord::Base.connection.reset_pk_sequence!('active_storage_attachments')
 
 demo = User.create!(firstname: "Demo",
                     lastname: "User",
@@ -85,20 +86,20 @@ business1r3 = Review.create!(rating: 4,
                         business_id: business1.id                       
 )
 
-business1r4 = Review.create!(rating: 2,
+business1r4 = Review.create!(rating: 3,
                         description: "Peaches were too sweet and the air conditioner was not working. It really is a hot house",
                         user_id: u4.id,
                         business_id: business1.id                       
 )
 
-pic1_1 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Peaches+HotHouse/1.jpeg')
-pic1_2 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Peaches+HotHouse/2.jpeg')
-pic1_3 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Peaches+HotHouse/3.jpeg')
-pic1_4 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Peaches+HotHouse/4.jpeg')
-business1r1.pictures.attach(io: pic1_1, filename: 'peaches_hothouse_1.jpeg')
-business1r1.pictures.attach(io: pic1_2, filename: 'peaches_hothouse_2.jpeg')
-business1r2.pictures.attach(io: pic1_3, filename: 'peaches_hothouse_3.jpeg')
-business1r3.pictures.attach(io: pic1_4, filename: 'peaches_hothouse_4.jpeg')
+peaches_1 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Peaches+HotHouse/1.jpeg')
+peaches_2 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Peaches+HotHouse/2.jpeg')
+peaches_3 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Peaches+HotHouse/3.jpeg')
+peaches_4 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Peaches+HotHouse/4.jpeg')
+business1r1.pictures.attach(io: peaches_1, filename: 'peaches_hothouse_1.jpeg')
+business1r1.pictures.attach(io: peaches_2, filename: 'peaches_hothouse_2.jpeg')
+business1r2.pictures.attach(io: peaches_3, filename: 'peaches_hothouse_3.jpeg')
+business1r3.pictures.attach(io: peaches_4, filename: 'peaches_hothouse_4.jpeg')
 
 # --------------------------------------------------------------
 
@@ -193,7 +194,7 @@ han_2 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Her+Name+Is+Han/2.jp
 han_3 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Her+Name+Is+Han/3.jpeg')
 han_4 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Her+Name+Is+Han/4.jpeg')
 business3r1.pictures.attach(io: han_1, filename: 'han_1.jpeg')
-business3r3.pictures.attach(io: han_2, filename: 'han_2.jpeg')
+business3r2.pictures.attach(io: han_2, filename: 'han_2.jpeg')
 business3r3.pictures.attach(io: han_3, filename: 'han_3.jpeg')
 business3r3.pictures.attach(io: han_4, filename: 'han_4.jpeg')
 
@@ -323,7 +324,7 @@ smith_3 = open('https://yupit-dev.s3.amazonaws.com/Businesses/smith/3.jpeg')
 smith_4 = open('https://yupit-dev.s3.amazonaws.com/Businesses/smith/4.jpeg')
 business6r1.pictures.attach(io: smith_1, filename: 'smith_1.jpeg')
 business6r2.pictures.attach(io: smith_2, filename: 'smith_2.jpeg')
-business6r3.pictures.attach(io: smith_3, filename: 'smith_3.jpeg')
+business6r1.pictures.attach(io: smith_3, filename: 'smith_3.jpeg')
 business6r3.pictures.attach(io: smith_4, filename: 'smith_4.jpeg')
 
 # --------------------------------------------------------------
@@ -407,7 +408,7 @@ thursday_3 = open('https://yupit-dev.s3.amazonaws.com/Businesses/thursday/3.jpeg
 thursday_4 = open('https://yupit-dev.s3.amazonaws.com/Businesses/thursday/4.jpeg')
 business8r1.pictures.attach(io: thursday_1, filename: 'thursday_1.jpeg')
 business8r2.pictures.attach(io: thursday_2, filename: 'thursday_2.jpeg')
-business8r3.pictures.attach(io: thursday_3, filename: 'thursday_3.jpeg')
+business8r2.pictures.attach(io: thursday_3, filename: 'thursday_3.jpeg')
 business8r3.pictures.attach(io: thursday_4, filename: 'thursday_4.jpeg')
 
 #--------------------------------------------------------------------------
@@ -447,7 +448,7 @@ yoon_1 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Yoon/1.jpeg')
 yoon_2 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Yoon/2.jpeg')
 yoon_3 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Yoon/3.jpeg')
 yoon_4 = open('https://yupit-dev.s3.amazonaws.com/Businesses/Yoon/4.jpeg')
-business9r1.pictures.attach(io: yoon_1, filename: 'yoon_1.jpeg')
+business9r2.pictures.attach(io: yoon_1, filename: 'yoon_1.jpeg')
 business9r2.pictures.attach(io: yoon_2, filename: 'yoon_2.jpeg')
 business9r3.pictures.attach(io: yoon_3, filename: 'yoon_3.jpeg')
 business9r3.pictures.attach(io: yoon_4, filename: 'yoon_4.jpeg')
@@ -490,7 +491,7 @@ hawk_2 = open('https://yupit-dev.s3.amazonaws.com/Businesses/hawk/2.jpeg')
 hawk_3 = open('https://yupit-dev.s3.amazonaws.com/Businesses/hawk/3.jpeg')
 hawk_4 = open('https://yupit-dev.s3.amazonaws.com/Businesses/hawk/4.jpeg')
 business10r1.pictures.attach(io: hawk_1, filename: 'hawk_1.jpeg')
-business10r2.pictures.attach(io: hawk_2, filename: 'hawk_2.jpeg')
+business10r1.pictures.attach(io: hawk_2, filename: 'hawk_2.jpeg')
 business10r3.pictures.attach(io: hawk_3, filename: 'hawk_3.jpeg')
 business10r3.pictures.attach(io: hawk_4, filename: 'hawk_4.jpeg')
 
