@@ -18,11 +18,13 @@ class BusinessIndex extends React.Component{
                 <div>Loading...</div>
             )
         } else {
+            const {businesses} = this.props
+            const businessesArray = Object.values(businesses)
             return(
                 <div className='business-index-list-wrapper'>
                     <div className='hot-new-businesses'>Hot & New Businesses</div>
                     <div className='business-index-list-container'>
-                        {Object.values(this.props.businesses).slice(0,3).map((business, i) => (
+                        {businessesArray.slice(businessesArray.length - 3).map((business, i) => (
                             <div className='business-index-item' key={i}>
                                 <BusinessIndexItem
                                     business={business}

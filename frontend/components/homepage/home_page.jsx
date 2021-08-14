@@ -2,6 +2,7 @@ import React from "react"
 import GreetingContainer from '../greeting/greeting_container';
 import BusinessIndexContainer from "../business/business_index_container";
 import SearchBarContainer from "../search/search_bar_container";
+import AboutMeFooter from "../footer/about_me_footer";
 
 const Homepage = () => (
     <div>
@@ -12,11 +13,12 @@ const Homepage = () => (
                 </div>
             </header>
             <div className='middle-of-photo-header'>
-                <div className="yupit-logo"><img src="https://lh3.googleusercontent.com/pw/AM-JKLVGlt2Z46Kdqcrwfyey_PGG8Lrr1Amu9TB4yKE5_1C71ypwoy96PzwUb_6zmFc7CPpUvSYSOzS8f87dAzaqmV-NnA0XzR3NOf8f_c-LI6FGZ55cUNoTFK6ApvMmlNM4koEyK2MTIrZDIz6fbv4piEc=w522-h478-no?authuser=0" alt="Yupit-logo" /></div> 
+                <div className="yupit-logo"><img src="assets/yupit_icon.png" alt="Yupit-logo" /></div> 
                 <div className='homepage-searchbar'><SearchBarContainer/></div>
             </div>
         </div> 
         <div className='botton-half-page'><BusinessIndexContainer /></div>
+        <AboutMeFooter/>
     </div>
     
 )

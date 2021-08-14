@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons'
 import * as RegFontAwesome from '@fortawesome/free-regular-svg-icons'
+import AboutMeFooter from '../footer/about_me_footer';
 
 class BusinessIndexItem extends React.Component{
 
