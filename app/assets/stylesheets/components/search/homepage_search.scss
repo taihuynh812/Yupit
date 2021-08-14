@@ -32,9 +32,18 @@
 }
 
 #keyword-search{
+    padding: 15px;
     border-right: 2px solid lightgray;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
+}
+
+#location-search{
+    padding: 15px;
+}
+
+.homepage-searchbar{
+    padding-right: 55px;    
 }
 
 .homepage-searchbar .search-submit{

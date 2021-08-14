@@ -36,7 +36,7 @@ class SearchBar extends React.Component{
                         <input 
                             type="text" 
                             id='keyword-search' 
-                            placeholder="Search food"
+                            placeholder="Try 'korean', 'lunch', or 'takeout' "
                             value={this.state.query}
                             onChange={this.update('query')}
                         />

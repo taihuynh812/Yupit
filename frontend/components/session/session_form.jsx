@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router'
+import AboutMeFooter from '../footer/about_me_footer'
 
 class SessionForm extends React.Component{
     constructor(props){
@@ -142,6 +143,7 @@ class SessionForm extends React.Component{
                     {this.props.formType === 'signup' ? this.signup() : this.login()}
                     <img src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" />
                 </div>
+                <footer className="session-footer"><AboutMeFooter/></footer>
             </div>
         )
     }
