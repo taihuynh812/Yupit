@@ -1,0 +1,33 @@
+.footer-container{
+    border: 1px solid black;
+    min-height: 350px;
+    margin-top: 100px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.about-me-container{
+    display: flex;
+    margin: 0 auto;
+    width: 30%;
+    justify-content: space-evenly;
+}
+
+.footer-about{
+    padding: 20px;
+
+    .footer-title{
+        color: #d32323;
+        font-size: 24px;
+        font-family: 'Kanit', sans-serif;
+    }
+    .about-links{
+        padding: 10px;
+
+        .about-link{
+            padding: 5px;
+            color: blue;
+            font-size: 18px;
+        }
+    }
+}

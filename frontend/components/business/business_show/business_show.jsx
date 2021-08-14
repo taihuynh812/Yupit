@@ -6,6 +6,7 @@ import { faStar, faStarHalfAlt, faPhone, faExternalLinkAlt, faDirections, faChec
 import * as RegFontAwesome from '@fortawesome/free-regular-svg-icons'
 import ReviewIndexContainer from '../../review/review_index/review_index_container';
 import BusinessMap from '../../map/business_map';
+import AboutMeFooter from '../../footer/about_me_footer';
 
 class BusinessShow extends React.Component{
     constructor(props){
@@ -180,7 +181,7 @@ class BusinessShow extends React.Component{
                             </div>
                         </div>
                     </div>
-                    
+                    <AboutMeFooter/>
                 </div>
             )
         }

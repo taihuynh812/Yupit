@@ -43,7 +43,7 @@ class SearchBar extends React.Component{
                         <input 
                             type="text" 
                             id='location-search' 
-                            placeholder='Location'
+                            placeholder='CURRENTLY ONLY NYC'
                         />
                     </div>
                     <div className='search-submit'>
