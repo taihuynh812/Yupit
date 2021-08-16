@@ -13,7 +13,7 @@ const Homepage = () => (
                 </div>
             </header>
             <div className='middle-of-photo-header'>
-                <div className="yupit-logo"><img src="assets/yupit_icon.png" alt="Yupit-logo" /></div> 
+                <div className="yupit-logo"><img src={window.yupitIcon} alt="Yupit-logo" /></div> 
                 <div className='homepage-searchbar'><SearchBarContainer/></div>
             </div>
         </div> 

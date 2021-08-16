@@ -10,10 +10,10 @@
 .business-index-list-container{
     display: flex;
     justify-content: space-between;
-    padding: 30px;
+    padding-top: 50px;
     white-space: nowrap;
     overflow: hidden;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -24,6 +24,7 @@
 }
 
 .business-index-list a{
+    color: #0073bb;
     text-decoration: none;
 }
 
@@ -31,9 +32,21 @@
     cursor: pointer;
 }
 
-.business-index-descript > div{
+.business-index-descript {
+    padding: 10px;
+
+    .business-index-name{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    > div {
     margin-left: 10px;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
+    }
+}
+
+.business-index-name:hover{
+    text-decoration: underline;
 }
 
 .business-index-categories{
@@ -42,8 +55,8 @@
 }
 
 .business-index-picture {
-    height: 150px;
-    width: 250px;
+    height: 250px;
+    width: 350px;
 }
 
 .business-index-rating{

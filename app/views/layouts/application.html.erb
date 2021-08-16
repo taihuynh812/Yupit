@@ -13,6 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
 
+    <script type="text/javascript">
+      window.yupitIcon = "<%= image_url('yupit_icon.png') %>";
+      window.yelpFooter = "<%= image_url('yelp_footer2.png') %>";
+    </script>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['MAPS_API_KEY']}" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>

@@ -39,7 +39,7 @@ class AboutMeFooter extends React.Component{
                 </div>
 
                 <div>
-                    <img className="footer-image" src="assets/yelp_footer2.png" />
+                    <img className="footer-image" src={window.yelpFooter} />
                 </div>
             </div>
         )
