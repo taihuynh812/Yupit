@@ -13,6 +13,7 @@
     top: 20px;
     border: 1px rgb(165, 161, 161) solid;
     border-radius: 3px; 
+    min-width: 300px;
 }
 
 .business-contact-container > div{
@@ -31,4 +32,14 @@
 
 .contact-icon{
     font-size: 20px
+}
+
+.websiteURL{
+    text-decoration: none;
+    color: blue;
+    font-size: 20px;
+}
+
+.websiteURL:hover{
+    text-decoration: underline;
 }

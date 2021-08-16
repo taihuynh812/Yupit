@@ -62,6 +62,7 @@ class BusinessShow extends React.Component{
             // debugger
             const rating = this.avgRating()
             const {id, name, address, city, state, zipcode, phone, website, mon_fri, sat_sun, categories, photoUrls, reviews, amenities} = this.props.business
+            const websiteURL = "https://"+website
             return(
                 <div>
                     {/* --------------NAV BAR---------------- */}
@@ -163,16 +164,12 @@ class BusinessShow extends React.Component{
                                             <div className='contact-icon'><FontAwesomeIcon icon={faPhone}/></div>  
                                         </div>
                                         <div className="business-contact-website">
-                                            <div>{website}</div>
+                                            <a href={websiteURL} target="_blank" className="websiteURL">{website}</a>
                                             <div className='contact-icon'><FontAwesomeIcon icon={faExternalLinkAlt}/></div>  
                                         </div>
                                         <div className="business-contact-direction">
                                             <div>{address}</div>
                                             <div className='contact-icon'><FontAwesomeIcon icon={faDirections}/></div>  
-                                        </div>
-                                        <div className="business-contact-message">
-                                            <div>Message the business</div>
-                                            <div className='contact-icon'><FontAwesomeIcon icon={RegFontAwesome.faComment}/></div>  
                                         </div>
                                         
                                     </div>

@@ -7,11 +7,9 @@ import AboutMeFooter from "../footer/about_me_footer";
 const Homepage = () => (
     <div>
         <div className='top-half-page'>
-            <header className="header-container">
-                <div className="nav-bar">
-                    <div className='nav-bar-right'><GreetingContainer /></div>
-                </div>
-            </header>
+            <div className="header-container">
+                <div className='nav-bar-right'><GreetingContainer /></div>
+            </div>
             <div className='middle-of-photo-header'>
                 <div className="yupit-logo"><img src={window.yupitIcon} alt="Yupit-logo" /></div> 
                 <div className='homepage-searchbar'><SearchBarContainer/></div>
