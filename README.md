@@ -50,7 +50,7 @@ The technologies that were used in Yupit are:
 ### 4. Search
 * Users can search for businesses, an amenity, a cateogry on Yupit through the searchbar
 * Search result page will also into a Google Maps that locate all the businesses that returned through search results
-![Yupit search page](https://github.com/taihuynh812/Yupit/blob/main/app/assets/images/Search.png?raw=true)
+![Yupit search page](https://github.com/taihuynh812/Yupit/blob/main/app/assets/images/search1.png?raw=true)
 
 ### 5. Maps
 * `Google Maps` is included in both the Search page and Business page that pinpoints the location of the business(es) that user is viewing
