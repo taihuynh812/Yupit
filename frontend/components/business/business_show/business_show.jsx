@@ -14,12 +14,6 @@ class BusinessShow extends React.Component{
         this.props.fetchBusiness(this.props.match.params.businessId)
         this.props.fetchUsers()
     }
-    
-    componentDidMount(){
-        // debugger
-        // this.props.fetchBusiness(this.props.match.params.businessId)
-        // this.props.fetchUsers().then(payload => (this.users = payload))
-    }
 
     avgRating(){
         let sum = 0;

@@ -1,5 +1,6 @@
 import React from 'react'
 import MarkerManager from '../../util/marker_manager'
+import { withRouter } from 'react-router'
 
 class BusinessMap extends React.Component{
     
@@ -27,6 +28,7 @@ class BusinessMap extends React.Component{
         this.MarkerManager.updateMarkers(this.props.businesses)
     }
 
+
     render(){
         return(
             <div id="map-container" ref={map => this.mapNode = map}>
@@ -36,4 +38,4 @@ class BusinessMap extends React.Component{
     }
 }
 
-export default BusinessMap
+export default withRouter(BusinessMap)

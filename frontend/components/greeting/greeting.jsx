@@ -28,6 +28,11 @@ class Greeting extends React.Component{
                     <FontAwesomeIcon icon={faUserAlt}/>
                     <div className={open ? "drop-down-open" : "drop-down-close"} >
                         <div className='drop-down-container'>
+                            {/* <div className="user-dropdown-about-me">
+                                <div><FontAwesomeIcon icon={RegFontAwesome.faUserCircle} /></div>
+                                <div>About me</div> 
+                            </div> */}
+                            
                             <div className="user-dropdown-log-out" onClick={this.props.logout}>
                                 <div><FontAwesomeIcon icon={faSignOutAlt} /></div>
                                 <div>Log Out</div> 
