@@ -45,6 +45,7 @@ The technologies that were used in Yupit are:
 * To post a review, a rating and description are required 
 * Only the owner of the review is able to update and delete the review
 ![Yupit review page](https://github.com/taihuynh812/Yupit/blob/main/app/assets/images/new_review.png?raw=true)
+![Yupit review page code snippet](https://github.com/taihuynh812/Yupit/blob/main/app/assets/images/codesnippet_new%20review.png?raw=true)
 
 ### 4. Search
 * Users can search for businesses, an amenity, a cateogry on Yupit through the searchbar
@@ -53,6 +54,9 @@ The technologies that were used in Yupit are:
 
 ### 5. Maps
 * `Google Maps` is included in both the Search page and Business page that pinpoints the location of the business(es) that user is viewing
+* Google Maps markers are displayed in numbered labels when in business index page
+
+![Yupit map code snippet](https://github.com/taihuynh812/Yupit/blob/main/app/assets/images/codesnippet_mapmarkers.png?raw=true)
 
 ## Upcoming features:
 * Implement searching by location
